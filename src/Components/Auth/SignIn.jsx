@@ -1,23 +1,24 @@
-import AuthLayout from "@/Layout/AuthLayout";
-import Link from "next/link";
 import { useState } from "react";
-import eyeOff from "../assets/eye-off.png";
-import eye from "../assets/eye.png";
+import AuthLayout from "../../Layout/AuthLayout";
+import "./Auth.css";
+import { Link } from "react-router-dom";
+import eyeOff from "../../assets/eye-off.png";
+import eye from "../../assets/eye.png";
 
-export default function Home() {
+const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <AuthLayout>
       <div className="signIn">
         <div className="flex justify-end gap-2 items-center">
-          <p className="dont fs-6">Don’t have any account?</p>{" "}
-          <Link href="/sign-up" className="signUn_btn fs_20">
+          <p className="dont">Don’t have any account?</p>{" "}
+          <Link to="/sign-up" className="signUn_btn fs_20">
             Sign Up
           </Link>
         </div>
         <form>
-          <h2 className="fs-2">Sign In</h2>
-          <p className="fs-6 subtitle">To continue to the system</p>
+          <h2 className="fs-2 ">Sign In</h2>
+          <p className="fs-6 subtitle ">To continue to the system</p>
           <div className="mb-4">
             <label className="fs-6" htmlFor="email">
               <span>*</span> Email Address
@@ -57,12 +58,12 @@ export default function Home() {
             </div>
             <div className="d-flex justify-content-between mb-5 gap-5 align-items-center">
               <p className="err_sms">Invalid Username or Password</p>
-              <Link href="/forgot-password" className="forgot fs_14">
+              <Link to="/forgot-password" className="forgot fs_14">
                 Forgot password?
               </Link>
             </div>
           </div>
-          <Link href="/dashboard">
+          <Link to="/dashboard">
             <button className="signIn_btn fs-5">Sign In</button>
           </Link>
         </form>
@@ -70,4 +71,6 @@ export default function Home() {
       </div>
     </AuthLayout>
   );
-}
+};
+
+export default SignIn;
