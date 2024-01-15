@@ -10,13 +10,13 @@ export default function Home() {
     <AuthLayout>
       <div className="signIn">
         <div className="flex justify-end gap-2 items-center">
-          <p className="dont fs-6">Don’t have any account?</p>{" "}
-          <Link href="/sign-up" className="signUn_btn fs_20">
+          <p className="dont">Don’t have any account?</p>{" "}
+          <Link href="/sign-up" className="signUn_btn text-[20px]">
             Sign Up
           </Link>
         </div>
         <form>
-          <h2 className="fs-2">Sign In</h2>
+          <h2 className="text-[32px]">Sign In</h2>
           <p className="fs-6 subtitle">To continue to the system</p>
           <div className="mb-4">
             <label className="fs-6" htmlFor="email">
@@ -34,7 +34,7 @@ export default function Home() {
             <label className="fs-6" htmlFor="password">
               <span>*</span> Password
             </label>
-            <div className="position-relative">
+            <div className="relative">
               <input
                 className="mb-2"
                 type={showPassword ? "text" : "password"}
@@ -50,12 +50,12 @@ export default function Home() {
                   right: "20px",
                   cursor: "pointer",
                 }}
-                className="position-absolute "
-                src={showPassword ? eye : eyeOff}
+                className="absolute "
+                src={showPassword ? eye.src : eyeOff.src}
                 alt=""
               />
             </div>
-            <div className="d-flex justify-content-between mb-5 gap-5 align-items-center">
+            <div className="flex justify-between mb-5 gap-5 items-center">
               <p className="err_sms">Invalid Username or Password</p>
               <Link href="/forgot-password" className="forgot fs_14">
                 Forgot password?
