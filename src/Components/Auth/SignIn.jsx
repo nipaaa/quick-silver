@@ -2,8 +2,8 @@ import { useState } from "react";
 import AuthLayout from "../../Layout/AuthLayout";
 import "./Auth.css";
 import { Link } from "react-router-dom";
-import eyeOff from "../../assets/eye-off.png";
-import eye from "../../assets/eye.png";
+import eyeOff from "../assets/eye-off.png";
+import eye from "../assets/eye.png";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,7 +17,7 @@ const SignIn = () => {
           </Link>
         </div>
         <form>
-          <h2 className="fs-2 ">Sign In</h2>
+          <h2 className="text-[32px] text-red-500">Sign Inkjdfgjkfdgb</h2>
           <p className="fs-6 subtitle ">To continue to the system</p>
           <div className="mb-4">
             <label className="fs-6" htmlFor="email">
@@ -52,7 +52,7 @@ const SignIn = () => {
                   cursor: "pointer",
                 }}
                 className="position-absolute "
-                src={showPassword ? eye : eyeOff}
+                src={showPassword ? eye.src : eyeOff.src}
                 alt=""
               />
             </div>
