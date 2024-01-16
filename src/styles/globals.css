@@ -407,3 +407,26 @@ label span {
   border-radius: 3px;
   background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color, #1E4C5A);
 }
+
+li.recharts-legend-item {
+  margin-right: 60px !important;
+}
+
+span.recharts-legend-item-text {
+  color: var(--primary-1st-primary-color-primary-color, #191E29) !important;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.office_page select {
+  border-radius: var(--Border-Radius-lg, 8px);
+  background: #F8F9FD;
+  color: var(--secondary-color-2nd-secondary-color-shade-02, #4C6C78);
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 13px 20px;
+  width: unset;
+  border: none;
+}
