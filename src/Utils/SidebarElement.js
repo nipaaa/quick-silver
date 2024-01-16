@@ -22,12 +22,12 @@ export const sidebarElement = [
       {
         pic: search,
         title: "Search",
-        path:"/dashboard/inspection/search"
+        path: "/dashboard/inspection/search",
       },
       {
         pic: newInspection,
         title: "New Inspection",
-        path:"/dashboard/inspection/new-inspection"
+        path: "/dashboard/inspection/new-inspection",
       },
     ],
   },
@@ -39,14 +39,17 @@ export const sidebarElement = [
       {
         pic: entity,
         title: "Entities",
+        path: "/dashboard/administration/entities",
       },
       {
         pic: company,
         title: "Company",
+        path: "/dashboard/administration/company",
       },
       {
         pic: list,
         title: "Lists",
+        path: "/dashboard/administration/lists",
       },
     ],
   },
