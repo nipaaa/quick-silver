@@ -4,10 +4,10 @@ const Insured = () => {
   return (
     <div>
       <form>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[60px] items-end">
           <div>
             <label className="fs-6" htmlFor="date">
-              Date:
+              <span>*</span> Due Date:
             </label>
             <input
               type="date"
@@ -18,7 +18,7 @@ const Insured = () => {
           </div>
           <div>
             <label className="fs-6" htmlFor="date">
-              Policy Holder:
+              <span>*</span> Policy Holder:
             </label>
             <select>
               <option>Bent Oak Mutual</option>
@@ -27,7 +27,7 @@ const Insured = () => {
           </div>
           <div>
             <label className="fs-6" htmlFor="policyNo">
-              Policy Number:
+              <span>*</span> Policy Number:
             </label>
             <input
               type="text"
@@ -38,7 +38,7 @@ const Insured = () => {
           </div>
           <div>
             <label className="fs-6" htmlFor="Inspection">
-              Inspection Type:
+              <span>*</span> Inspection Type:
             </label>
             <select>
               <option>Dwelling</option>
@@ -54,12 +54,17 @@ const Insured = () => {
               <option>Jake Mangrove</option>
             </select>
           </div>
-          <div></div>
+
+          <div>
+            <button className="search_btn w-full ">
+              Notify of Reassignment
+            </button>
+          </div>
           <div></div>
           <div></div>
           <div>
             <label className="fs-6" htmlFor="insured">
-              Insured:
+              <span>*</span> Insured:
             </label>
             <input
               type="text"
@@ -93,7 +98,7 @@ const Insured = () => {
           <div></div>
           <div>
             <label className="fs-6" htmlFor="address1">
-              Address 01:
+              <span>*</span> Address 01:
             </label>
             <input
               type="text"
@@ -112,13 +117,13 @@ const Insured = () => {
           <div></div>
           <div>
             <label className="fs-6" htmlFor="city">
-              City:
+              <span>*</span> City:
             </label>
             <input type="text" name="city" id="city" placeholder="Hermann" />
           </div>
           <div>
             <label className="fs-6" htmlFor="state">
-              State:
+              <span>*</span> State:
             </label>
             <select>
               <option>MO-Missouri </option>
@@ -127,7 +132,7 @@ const Insured = () => {
           </div>
           <div>
             <label className="fs-6" htmlFor="zip">
-              Zip code:
+              <span>*</span> Zip code:
             </label>
             <input type="number" name="zip" id="zip" placeholder="zip" />
           </div>
@@ -135,7 +140,7 @@ const Insured = () => {
 
         <div className="flex gap-4 items-center btn_set">
           <button className="cancel_btn ">Cancel</button>
-          <button className="search_btn">Search</button>
+          <button className="search_btn">Save</button>
         </div>
       </form>
     </div>
