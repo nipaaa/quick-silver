@@ -41,7 +41,8 @@ select:focus-visible {
 }
 
 label {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: #191E29;
+  font-size: 16px;
   font-weight: 500;
   margin-bottom: 14px;
   display: block;
