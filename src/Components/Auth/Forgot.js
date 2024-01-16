@@ -30,7 +30,7 @@ const Forgot = () => {
           </div>
           <p className="err_sms mb-5">Invalid Email Address</p>
 
-          <Link href="/reset_password">
+          <Link href="/reset-password">
             <button className="signIn_btn fs-5">Reset Password</button>
           </Link>
         </form>
