@@ -3,6 +3,7 @@ import arrow from "../assets/down-arrow.png";
 import { useState } from "react";
 import Link from "next/link";
 import { sidebarElement } from "@/Utils/SidebarElement";
+import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -10,7 +11,7 @@ const Sidebar = () => {
   const handleDropdownClick = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-
+  const pathname = usePathname();
   return (
     <div className="sidebar">
       <Link href="/" className="logo inline-block">
@@ -21,7 +22,9 @@ const Sidebar = () => {
           <Link
             onClick={() => handleDropdownClick(index)}
             href="#"
-            className={`link ${openIndex === index ? "active" : ""}`}
+            className={`link ${
+              pathname === data.subtitle?.path ? "active" : ""
+            }`}
           >
             <div className="flex items-center gap-3">
               <img src={data.pic.src} alt="" />
@@ -42,7 +45,7 @@ const Sidebar = () => {
                   className="subLink flex items-center gap-3"
                   href={`${subData?.path}`}
                 >
-                  <img src={subData.pic.srcf} alt="" />
+                  <img src={subData.pic.src} alt="" />
                   <p>{subData.title}</p>
                 </Link>
               </div>

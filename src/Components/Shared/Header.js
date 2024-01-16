@@ -15,7 +15,7 @@ const Header = () => {
         <input type="search" placeholder="Search" />
         <div
           onClick={() => setShow(!show)}
-          className="flex items-center gap-2 w-full profile "
+          className="flex items-center gap-2 w-full profile cursor-pointer "
         >
           <img
             height={40}
@@ -42,11 +42,19 @@ const Header = () => {
                   <p className="name ">John Doe</p>
                   <p className="email ">john.doe@gmail.com</p>
                 </div>
-                <Link className=" flex items-center gap-3 " href="#">
+                <Link
+                  style={{ display: "flex" }}
+                  className="  items-center gap-3 "
+                  href="#"
+                >
                   <img src={manage.src} alt="" />
                   Manage account
                 </Link>
-                <Link className=" flex items-center gap-3" href="#">
+                <Link
+                  style={{ display: "flex" }}
+                  className="  items-center gap-3"
+                  href="#"
+                >
                   <img src={signOut.src} alt="" />
                   Sign Out
                 </Link>
