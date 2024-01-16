@@ -1,0 +1,86 @@
+.search_form {
+    padding: 30px;
+}
+
+.search_form button {
+    border-radius: 10px;
+    background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color, #1E4C5A);
+    color: #FFF;
+    font-weight: 600;
+    padding: 16px 46px;
+    margin-bottom: 30px;
+}
+
+.inspection_header {
+    margin: 48px 30px 21px 30px;
+    display: flex;
+    align-items: center;
+    gap: 92px
+}
+
+.inspection_tab {
+    padding: 64px 30px 0 30px;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    border-bottom: 2px solid #FAFDFF;
+}
+
+.inspection_tab .tab {
+    color: var(--primary-1st-primary-color-primary-color, #191E29);
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.inspection_tab .active {
+    color: var(--secondary-color-1st-secondary-1st-secondary-color, #FF6B0D) !important;
+    position: relative;
+}
+
+.inspection_tab .active::after {
+    background-color: var(--secondary-color-1st-secondary-1st-secondary-color, #FF6B0D);
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    bottom: 0;
+}
+
+.inspection_body {
+    background-color: #FAFDFF;
+    padding: 30px;
+}
+
+.inspection_body input,
+.inspection_body select {
+    padding: 10px 20px;
+}
+
+.inspection_body input::placeholder,
+.inspection_body select {
+    color: var(--primary-1st-primary-color-primary-color, #191E29);
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.btn_set {
+    margin: 40px 0;
+}
+
+.cancel_btn {
+    border-radius: 10px;
+    background: #E8ECEF;
+    color: var(--primary-1st-primary-color-primary-color, #191E29);
+    font-weight: 600;
+    padding: 17px 46px;
+}
+
+.search_btn {
+    border-radius: 10px;
+    background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color, #1E4C5A);
+    color: #FFF;
+    font-weight: 600;
+    padding: 17px 46px;
+}

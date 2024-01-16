@@ -1,8 +1,8 @@
-import Sidebar from "../Components/Dashboard/Sidebar";
-import { Outlet } from "react-router-dom";
-import Header from "../Components/Shared/Header";
+import Header from "@/Components/Shared/Header";
+import Sidebar from "@/Components/Sidebar";
 
-const DashboardLayout = () => {
+
+const DashboardLayout = ({ children }) => {
   return (
     <div className="h-screen flex">
       <div className="flex-shrink-0">
@@ -10,7 +10,7 @@ const DashboardLayout = () => {
       </div>
       <div style={{ overflowY: "scroll" }} className="w-full">
         <Header />
-        <Outlet />
+        {children}
       </div>
     </div>
   );
