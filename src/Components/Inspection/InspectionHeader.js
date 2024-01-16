@@ -1,9 +1,8 @@
-import inspection from "../../../assets/inspection-org.png";
-import insured from "../../../assets/insured.png";
-import assign from "../../../assets/assign.png";
-import './Inspection.css'
+import inspection from "../../assets/inspection-org.png";
+import insured from "../../assets/insured-active.png";
+import assign from "../../assets/assign.png";
 
-const NewInspectionHeader = () => {
+const InspectionHeader = () => {
   const options = [
     {
       pic: inspection,
@@ -21,8 +20,8 @@ const NewInspectionHeader = () => {
   return (
     <div className="inspection_header">
       {options.map((data, index) => (
-        <div className="d-flex align-items-center gap-2" key={index}>
-          <img src={data.pic} alt="" />
+        <div className="flex items-center gap-2" key={index}>
+          <img src={data.pic.src} alt="" />
           <p>{data.title}</p>
         </div>
       ))}
@@ -30,4 +29,4 @@ const NewInspectionHeader = () => {
   );
 };
 
-export default NewInspectionHeader;
+export default InspectionHeader;

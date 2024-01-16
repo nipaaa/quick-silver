@@ -1,12 +1,11 @@
 import React from "react";
-import "./Inspection.css";
 
 const Insured = () => {
   return (
     <div>
       <form>
-        <div className="row g-5">
-          <div className="col-md-6 col-lg-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div>
             <label className="fs-6" htmlFor="date">
               Date:
             </label>
@@ -17,7 +16,7 @@ const Insured = () => {
               placeholder="Enter your email address"
             />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="date">
               Policy Holder:
             </label>
@@ -26,7 +25,7 @@ const Insured = () => {
               <option>Bent Oak Mutual</option>
             </select>
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="policyNo">
               Policy Number:
             </label>
@@ -37,7 +36,7 @@ const Insured = () => {
               placeholder="HO-41321"
             />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="Inspection">
               Inspection Type:
             </label>
@@ -46,7 +45,7 @@ const Insured = () => {
               <option>Dwelling</option>
             </select>
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="assigned">
               Assigned To:
             </label>
@@ -55,10 +54,10 @@ const Insured = () => {
               <option>Jake Mangrove</option>
             </select>
           </div>
-          <div className="col-md-6 col-lg-3"></div>
-          <div className="col-md-6 col-lg-3"></div>
-          <div className="col-md-6 col-lg-3"></div>
-          <div className="col-md-6 col-lg-3">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div>
             <label className="fs-6" htmlFor="insured">
               Insured:
             </label>
@@ -69,7 +68,7 @@ const Insured = () => {
               placeholder="James Smith"
             />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="email">
               Email:
             </label>
@@ -80,7 +79,7 @@ const Insured = () => {
               placeholder="jsmith@gmail.com"
             />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="cell">
               Cell Phone:
             </label>
@@ -91,8 +90,8 @@ const Insured = () => {
               placeholder="(941) 807-2258"
             />
           </div>
-          <div className="col-md-6 col-lg-3"></div>
-          <div className="col-md-6 col-lg-3">
+          <div></div>
+          <div>
             <label className="fs-6" htmlFor="address1">
               Address 01:
             </label>
@@ -103,21 +102,21 @@ const Insured = () => {
               placeholder="2374 Highway K"
             />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="address2">
               Address 02:
             </label>
             <input type="text" name="address2" id="address2" placeholder="" />
           </div>
-          <div className="col-md-6 col-lg-3"></div>
-          <div className="col-md-6 col-lg-3"></div>
-          <div className="col-md-6 col-lg-3">
+          <div></div>
+          <div></div>
+          <div>
             <label className="fs-6" htmlFor="city">
               City:
             </label>
             <input type="text" name="city" id="city" placeholder="Hermann" />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="state">
               State:
             </label>
@@ -126,7 +125,7 @@ const Insured = () => {
               <option>MO-Missouri </option>
             </select>
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="zip">
               Zip code:
             </label>
@@ -134,9 +133,9 @@ const Insured = () => {
           </div>
         </div>
 
-        <div className="d-flex gap-4 align-items-center btn_set">
-          <button className="cancel_btn fs-6">Cancel</button>
-          <button className="search_btn fs-6">Search</button>
+        <div className="flex gap-4 items-center btn_set">
+          <button className="cancel_btn ">Cancel</button>
+          <button className="search_btn">Search</button>
         </div>
       </form>
     </div>

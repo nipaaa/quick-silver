@@ -2,6 +2,10 @@ import { inspectionResult } from "@/Utils/SidebarElement";
 import React from "react";
 
 const Results = () => {
+  const handleNavigate = () => {
+    Router.push("/");
+  };
+
   return (
     <div>
       <h2
@@ -23,7 +27,7 @@ const Results = () => {
         </thead>
         <tbody>
           {inspectionResult.map((data, index) => (
-            <tr key={index}>
+            <tr onClick={handleNavigate} key={index}>
               <td style={{ color: "#FF6B0D" }}>{data.insured}</td>
               <td>{data.assigned}</td>
               <td>{data.DueDate}</td>

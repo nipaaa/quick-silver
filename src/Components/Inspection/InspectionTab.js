@@ -1,20 +1,20 @@
-import insured from "../../../assets/insured.png";
-import insuredActive from "../../../assets/insured-active.png";
-import property from "../../../assets/property.png";
-import propertyActive from "../../../assets/property-active.png";
-import hazard from "../../../assets/hazard.png";
-import hazardActive from "../../../assets/hazard-active.png";
-import outbuilding from "../../../assets/outbuilding.png";
-import outbuildingActive from "../../../assets/outbuilding-active.png";
-import attachment from "../../../assets/attachments.png";
-import attachmentActive from "../../../assets/attachments-active.png";
-import action from "../../../assets/action.png";
-import actionActive from "../../../assets/action-active.png";
-import history from "../../../assets/history.png";
-import historyActive from "../../../assets/history-active.png";
-import "./Inspection.css";
-import Insured from "./Insured";
+import insured from "../../assets/insured.png";
+import insuredActive from "../../assets/insured-active.png";
+import property from "../../assets/property.png";
+import propertyActive from "../../assets/property-active.png";
+import hazard from "../../assets/hazard.png";
+import hazardActive from "../../assets/hazard-active.png";
+import outbuilding from "../../assets/outbuilding.png";
+import outbuildingActive from "../../assets/outbuilding-active.png";
+import attachment from "../../assets/attachments.png";
+import attachmentActive from "../../assets/attachments-active.png";
+import action from "../../assets/action.png";
+import actionActive from "../../assets/action-active.png";
+import history from "../../assets/history.png";
+import historyActive from "../../assets/history-active.png";
+
 import { useState } from "react";
+import Insured from "./Insured";
 import Property from "./Property";
 
 const InspectionTab = () => {
@@ -63,7 +63,7 @@ const InspectionTab = () => {
           <div
             onClick={() => setActiveTab(index)}
             style={{ cursor: "pointer" }}
-            className={`d-flex gap-1 align-items-center tab fs-6  ${
+            className={`flex gap-1 items-center tab   ${
               activeTab === index && "active"
             }`}
             key={index}

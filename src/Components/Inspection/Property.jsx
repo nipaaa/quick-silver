@@ -1,12 +1,12 @@
 import React from "react";
-import "./Inspection.css";
+
 
 const Property = () => {
   return (
     <div>
       <form>
-        <div className="row g-5">
-          <div className="col-md-6 col-lg-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div>
             <label className="fs-6" htmlFor="details">
               Property Details
             </label>
@@ -17,7 +17,7 @@ const Property = () => {
               placeholder="Dwelling  "
             />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="year">
               Year Built
             </label>
@@ -28,7 +28,7 @@ const Property = () => {
               placeholder="Dwelling  "
             />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="front">
               Dwelling Front
             </label>
@@ -39,8 +39,8 @@ const Property = () => {
               placeholder="SE-Southeast"
             />
           </div>
-          <div className="col-md-6 col-lg-3"></div>
-          <div className="col-md-6 col-lg-3">
+          <div></div>
+          <div>
             <label className="fs-6" htmlFor="occupied">
               Occupied:
             </label>
@@ -50,7 +50,7 @@ const Property = () => {
             </select>
           </div>
 
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="owner">
               Homeowner Present:
             </label>
@@ -60,7 +60,7 @@ const Property = () => {
             </select>
           </div>
 
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="siding">
               Siding Material:
             </label>
@@ -71,7 +71,7 @@ const Property = () => {
               placeholder="Hardboard/Similar"
             />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="stories:">
               Stories:
             </label>
@@ -80,13 +80,13 @@ const Property = () => {
               <option>20</option>
             </select>
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="sq">
               SQ Feet:
             </label>
             <input type="number" name="sq" id="sq" placeholder="1.392" />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="measure">
               Measured W/:
             </label>
@@ -96,13 +96,13 @@ const Property = () => {
             </select>
           </div>
 
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="roof">
               Roof Material:
             </label>
             <input type="text" name="roof" id="roof" placeholder="Metal" />
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div>
             <label className="fs-6" htmlFor="layer">
               Roof Layers:
             </label>
@@ -110,7 +110,7 @@ const Property = () => {
           </div>
         </div>
 
-        <div className="d-flex gap-4 align-items-center btn_set">
+        <div className="flex gap-4 items-center btn_set">
           <button className="cancel_btn fs-6">Cancel</button>
           <button className="search_btn fs-6">Search</button>
         </div>
