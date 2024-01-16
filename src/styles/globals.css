@@ -1,16 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 h1,
@@ -41,7 +37,7 @@ select:focus-visible {
 }
 
 label {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 500;
   margin-bottom: 14px;
   display: block;
@@ -50,15 +46,15 @@ label {
 input,
 select {
   border-radius: 3px;
-  border: 1px solid var(--secondary-color-2nd-secondary-color-shade-02, #A4B2B9);
+  border: 1px solid var(--secondary-color-2nd-secondary-color-shade-02, #a4b2b9);
   padding: 19px;
   width: 100%;
 }
 
 input::placeholder,
 select {
-  color: rgba(147, 147, 147, 0.80);
-  font-family: 'Raleway', sans-serif;
+  color: rgba(147, 147, 147, 0.8);
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
@@ -77,36 +73,34 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 18px;
 }
 
-
 table {
   width: 100%;
   overflow-x: scroll;
 }
 
 table th {
-  background: #EBF6FD;
+  background: #ebf6fd;
   padding: 16px 30px;
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 600;
 }
 
 table td {
-  border-bottom: 1px solid #EEE;
-  background: #FAFDFF;
+  border-bottom: 1px solid #eee;
+  background: #fafdff;
   padding: 16px 30px;
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 400;
 }
 
 table td.dot {
   position: relative;
   padding-left: 50px;
-
 }
 
 table td.dot::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 5px;
   height: 5px;
   background-color: #000000;
@@ -117,8 +111,8 @@ table td.dot::before {
 }
 
 .table_result {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
-  font-family: 'Raleway', sans-serif;
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   padding-top: 20px;
   padding-left: 30px;
@@ -134,24 +128,23 @@ table td.dot::before {
 }
 
 .header h2 {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 700;
 }
 
 .header input {
   border-radius: 7px;
-  background: #F8F9FD;
+  background: #f8f9fd;
   padding: 9px 22px;
   border: none;
-  background-image: url('../assets/search.png');
+  background-image: url("../assets/search.png");
   background-repeat: no-repeat;
   background-position: center left 4%;
-
 }
 
 .header input::placeholder {
-  color: #A6ACBE;
-  font-family: 'Raleway', sans-serif;
+  color: #a6acbe;
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   font-weight: 400;
   padding-left: 10px;
@@ -160,7 +153,7 @@ table td.dot::before {
 .header .profile_box {
   position: absolute;
   border-radius: 11px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 5px 10px 50px -2px rgba(0, 0, 0, 0.15);
   padding: 30px;
   min-height: 283px;
@@ -168,34 +161,32 @@ table td.dot::before {
   right: 30px;
   height: 100%;
   width: 496px;
-
 }
 
 .header a {
   display: block;
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 600;
   margin-bottom: 33px;
 }
 
 .header .name {
-  color: #2A3C50;
+  color: #2a3c50;
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
 .header .email {
-  color: var(--primary-2nd-primary-2nd-primary, #BDBBBB);
+  color: var(--primary-2nd-primary-2nd-primary, #bdbbbb);
   font-weight: 400;
   margin-bottom: 38px;
 }
 
 .sidebar {
   width: 290px;
-  background: #0D2330;
+  background: #0d2330;
   height: 100%;
-
 }
 
 .sidebar .logo {
@@ -207,22 +198,22 @@ table td.dot::before {
 }
 
 .sidebar a {
-  color: #B5D1E0;
+  color: #b5d1e0;
   margin: 20px;
 }
 
 .sidebar .link.active {
   border-radius: 1px 6px 6px 1px;
-  background: #1E4C5A;
+  background: #1e4c5a;
   position: relative;
   z-index: 10000;
 }
 
 .sidebar .link.active::before {
   position: absolute;
-  content: '';
+  content: "";
   border-radius: 6px;
-  background: var(--secondary-color-3rd-secondary-3rd-secondary-color, #B9DCE6);
+  background: var(--secondary-color-3rd-secondary-3rd-secondary-color, #b9dce6);
   width: 3px;
   height: 100%;
   top: 0;
@@ -248,42 +239,43 @@ table td.dot::before {
 
 .sidebar .subLink::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 1px;
   height: 70px;
-  background-color: #777A9E;
+  background-color: #777a9e;
   bottom: 50%;
   left: -24px;
   z-index: 9999;
-
 }
 
 .sidebar .subLink::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 24px;
   height: 1px;
-  background-color: #777A9E;
+  background-color: #777a9e;
   top: 50%;
   left: -24px;
 }
 
 .sidebar .subLink.active {
   border-radius: 6px;
-  background: #0F323D;
+  background: #0f323d;
 }
 
 .sidebar .arrow {
   transform: rotate(180deg);
 }
 
-
 .auth {
   height: 100vh !important;
 }
 
 .auth .right_side {
-  background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color, #1E4C5A);
+  background: var(
+    --secondary-color-2nd-secondary-color-2nd-secondary-color,
+    #1e4c5a
+  );
   padding: 30px;
 }
 
@@ -299,29 +291,32 @@ table td.dot::before {
 }
 
 .signIn .dont {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-size: 16px;
   font-weight: 400;
 }
 
 .signIn .signUn_btn {
   border-radius: 10px;
-  background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color, #1E4C5A);
-  color: #FFF;
+  background: var(
+    --secondary-color-2nd-secondary-color-2nd-secondary-color,
+    #1e4c5a
+  );
+  color: #fff;
   font-weight: 700;
   padding: 11px 32px;
 }
 
 .signIn h2 {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .signIn .subtitle {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 400;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   margin-bottom: 41px;
 }
 
@@ -332,35 +327,38 @@ table td.dot::before {
 }
 
 label span {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 .signIn .forgot {
-  color: #75787F;
+  color: #75787f;
   text-align: right;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   display: block;
 }
 
 .err_sms {
-  color: var(--warning, #F00) !important;
-  font-family: 'Raleway', sans-serif;
+  color: var(--warning, #f00) !important;
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
 
 .signIn .signIn_btn {
   border-radius: 3px;
-  background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color, #1E4C5A);
+  background: var(
+    --secondary-color-2nd-secondary-color-2nd-secondary-color,
+    #1e4c5a
+  );
   width: 100%;
   padding: 20px;
-  color: #FFF;
+  color: #fff;
   font-weight: 700;
 }
 
 .signIn #email {
-  background-image: url('../assets/emailIcon.png');
+  background-image: url("../assets/emailIcon.png");
   background-repeat: no-repeat;
   background-position: center left 3%;
   padding-left: 40px;
@@ -377,7 +375,7 @@ label span {
 
 .validate .valid_box {
   border-radius: 15px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 5px 10px 50px -2px rgba(116, 116, 116, 0.15);
   max-width: 817px;
   padding: 89px 30px;
@@ -389,23 +387,26 @@ label span {
 }
 
 .validate .valid_box h2 {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .validate .valid_box p {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
-  font-family: 'Raleway', sans-serif;
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   margin-bottom: 51px;
 }
 
 .validate button {
-  color: #FFF;
+  color: #fff;
   font-weight: 700;
   border-radius: 3px;
-  background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color, #1E4C5A);
+  background: var(
+    --secondary-color-2nd-secondary-color-2nd-secondary-color,
+    #1e4c5a
+  );
 }
 
 li.recharts-legend-item {
@@ -413,17 +414,17 @@ li.recharts-legend-item {
 }
 
 span.recharts-legend-item-text {
-  color: var(--primary-1st-primary-color-primary-color, #191E29) !important;
-  font-family: 'Raleway', sans-serif;
+  color: var(--primary-1st-primary-color-primary-color, #191e29) !important;
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
 
 .office_page select {
   border-radius: var(--Border-Radius-lg, 8px);
-  background: #F8F9FD;
-  color: var(--secondary-color-2nd-secondary-color-shade-02, #4C6C78);
-  font-family: 'Raleway', sans-serif;
+  background: #f8f9fd;
+  color: var(--secondary-color-2nd-secondary-color-shade-02, #4c6c78);
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 400;
   padding: 13px 20px;
@@ -437,8 +438,11 @@ span.recharts-legend-item-text {
 
 .search_form button {
   border-radius: 10px;
-  background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color, #1E4C5A);
-  color: #FFF;
+  background: var(
+    --secondary-color-2nd-secondary-color-2nd-secondary-color,
+    #1e4c5a
+  );
+  color: #fff;
   font-weight: 600;
   padding: 16px 46px;
   margin-bottom: 30px;
@@ -448,7 +452,7 @@ span.recharts-legend-item-text {
   margin: 48px 30px 21px 30px;
   display: flex;
   align-items: center;
-  gap: 92px
+  gap: 92px;
 }
 
 .inspection_tab {
@@ -456,24 +460,30 @@ span.recharts-legend-item-text {
   display: flex;
   align-items: center;
   gap: 70px;
-  border-bottom: 2px solid #FAFDFF;
+  border-bottom: 2px solid #fafdff;
 }
 
 .inspection_tab .tab {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 400;
   padding-bottom: 15px;
 }
 
 .inspection_tab .active {
-  color: var(--secondary-color-1st-secondary-1st-secondary-color, #FF6B0D) !important;
+  color: var(
+    --secondary-color-1st-secondary-1st-secondary-color,
+    #ff6b0d
+  ) !important;
   position: relative;
 }
 
 .inspection_tab .active::after {
-  background-color: var(--secondary-color-1st-secondary-1st-secondary-color, #FF6B0D);
+  background-color: var(
+    --secondary-color-1st-secondary-1st-secondary-color,
+    #ff6b0d
+  );
   position: absolute;
-  content: '';
+  content: "";
   width: 100%;
   height: 2px;
   border-radius: 5px;
@@ -481,7 +491,7 @@ span.recharts-legend-item-text {
 }
 
 .inspection_body {
-  background-color: #FAFDFF;
+  background-color: #fafdff;
   padding: 30px;
 }
 
@@ -492,8 +502,8 @@ span.recharts-legend-item-text {
 
 .inspection_body input::placeholder,
 .inspection_body select {
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
-  font-family: 'Raleway', sans-serif;
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
@@ -504,16 +514,40 @@ span.recharts-legend-item-text {
 
 .cancel_btn {
   border-radius: 10px;
-  background: #E8ECEF;
-  color: var(--primary-1st-primary-color-primary-color, #191E29);
+  background: #e8ecef;
+  color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 600;
   padding: 17px 46px;
 }
 
 .search_btn {
   border-radius: 10px;
-  background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color, #1E4C5A);
-  color: #FFF;
+  background: var(
+    --secondary-color-2nd-secondary-color-2nd-secondary-color,
+    #1e4c5a
+  );
+  color: #fff;
   font-weight: 600;
   padding: 17px 46px;
+}
+
+.inputField {
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #dee8ed;
+  background: #fff;
+
+  color: #191e29;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.inputLabel {
+  color: #191e29;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
