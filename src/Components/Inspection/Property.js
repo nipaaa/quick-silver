@@ -27,9 +27,7 @@ const Property = () => {
               placeholder="Dwelling  "
             />
           </div>
-          <div className="col-span-2 border border-dashed border-[#FF6B0D]">
-            <p className="font-semibold mb-5">Add ons:</p>
-          </div>
+
           <div>
             <label className="fs-6" htmlFor="front">
               <span>*</span> Dwelling Front
@@ -41,6 +39,14 @@ const Property = () => {
               placeholder="SE-Southeast"
             />
           </div>
+          <div></div>
+          <div className="col-span-2 border border-dashed border-[#FF6B0D] p-5">
+            <p className="font-semibold mb-5">Add ons:</p>
+            <div>
+              
+            </div>
+          </div>
+          <div></div>
           <div></div>
           <div>
             <label className="fs-6" htmlFor="occupied">
