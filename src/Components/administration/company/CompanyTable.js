@@ -43,7 +43,14 @@ const datas = [
 const CompanyTable = () => {
   const [checkedItems, setCheckItems] = useState([]);
 
-  const handleCheck = () => {};
+  const handleCheck = (item) => {
+    if (checkedItems.includes(item)) {
+      const newItems = checkedItems.filter((i) => i !== item);
+      setCheckItems(newItems);
+    } else {
+      setCheckItems((current) => [...current, item]);
+    }
+  };
   return (
     <div>
       <table className="fs_14">
@@ -71,9 +78,15 @@ const CompanyTable = () => {
                   className="h-[19px] w-[19px] cursor-pointer"
                   style={{ accentColor: "#ff6b0d", color: "#fff" }}
                 /> */}
-                <div onClick={handleCheck}>
-                  <img src={check.src} alt="" />
-                  <img src={unCheck.src} alt="" />
+                <div
+                  onClick={() => handleCheck(index)}
+                  className="flex justify-center"
+                >
+                  {checkedItems.includes(index) ? (
+                    <img src={check.src} alt="" className="cursor-pointer" />
+                  ) : (
+                    <img src={unCheck.src} alt="" className="cursor-pointer" />
+                  )}
                 </div>
               </td>
             </tr>
