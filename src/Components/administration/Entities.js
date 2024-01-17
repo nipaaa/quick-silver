@@ -39,7 +39,7 @@ const Entities = () => {
     <div className="mt-[30px]">
       <table className="fs_14">
         <thead>
-          <tr>
+          <tr className="text-left">
             <th className="text-start">ID</th>
             <th className="text-start">Company Name </th>
             <th className="text-start">Address</th>

@@ -5,7 +5,7 @@ const InspectionTable = () => {
     <div>
       <table className="fs_14">
         <thead>
-          <tr>
+          <tr  className="text-left">
             <th>Date Created </th>
             <th>Modified </th>
             <th>Email </th>
