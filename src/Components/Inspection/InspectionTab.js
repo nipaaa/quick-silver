@@ -16,6 +16,7 @@ import historyActive from "../../assets/history-active.png";
 import { useState } from "react";
 import Insured from "./Insured";
 import Property from "./Property";
+import Hazards from "./Hazards";
 
 const InspectionTab = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -77,6 +78,7 @@ const InspectionTab = () => {
       <div className="inspection_body">
         {activeTab === 0 && <Insured />}
         {activeTab === 1 && <Property />}
+        {activeTab === 2 && <Hazards />}
       </div>
     </div>
   );
