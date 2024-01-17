@@ -17,6 +17,7 @@ import { useState } from "react";
 import Insured from "./Insured";
 import Property from "./Property";
 import Hazards from "./Hazards";
+import OutBuildings from "./OutBuildings";
 
 const InspectionTab = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -79,6 +80,7 @@ const InspectionTab = () => {
         {activeTab === 0 && <Insured />}
         {activeTab === 1 && <Property />}
         {activeTab === 2 && <Hazards />}
+        {activeTab === 3 && <OutBuildings />}
       </div>
     </div>
   );
