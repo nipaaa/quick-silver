@@ -19,7 +19,7 @@ const Results = () => {
       </h2>
       <table className="fs_14">
         <thead>
-          <tr>
+          <tr  className="text-left">
             <th>Insured </th>
             <th>Assigned To</th>
             <th>Due Date</th>

@@ -20,6 +20,8 @@ import Hazards from "./Hazards";
 import OutBuildings from "./OutBuildings";
 import Image from "next/image";
 import Attachments from "./Attachments";
+import Actions from "./Actions";
+import HistoryLog from "./HistoryLog";
 
 const InspectionTab = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -87,6 +89,8 @@ const InspectionTab = () => {
         {activeTab === 2 && <Hazards />}
         {activeTab === 3 && <OutBuildings />}
         {activeTab === 4 && <Attachments />}
+        {activeTab === 5 && <Actions />}
+        {activeTab === 6 && <HistoryLog />}
       </div>
     </div>
   );
