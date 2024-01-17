@@ -1,13 +1,12 @@
 import { officeEntries } from "@/Utils/SidebarElement";
 import React from "react";
 
-
 const Entries = () => {
   return (
     <div className="office_entries">
       <table className="fs_14">
         <thead>
-          <tr>
+          <tr className="text-left">
             <th>Entry Date</th>
             <th>Due Date</th>
             <th>Assigned To</th>
