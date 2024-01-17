@@ -8,7 +8,6 @@ const Search = () => {
           <div className="w-full">
             <label htmlFor="name">Enter the insured’s name</label>
             <input
-              style={{ padding: "13px 20px", borderRadius: "8px" }}
               type="text"
               name="name"
               id="name"
@@ -17,10 +16,7 @@ const Search = () => {
           </div>
           <div className="w-full">
             <label htmlFor="assign">Assigned to</label>
-            <select
-              style={{ padding: "13px 20px", borderRadius: "8px" }}
-              id="assign"
-            >
+            <select id="assign">
               <option selected disabled>
                 Assigned to
               </option>
@@ -30,10 +26,7 @@ const Search = () => {
           </div>
           <div className="w-full">
             <label htmlFor="status">Status</label>
-            <select
-              style={{ padding: "13px 20px", borderRadius: "8px" }}
-              id="assign"
-            >
+            <select id="assign">
               <option selected disabled>
                 Status
               </option>
