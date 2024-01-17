@@ -1,14 +1,15 @@
 import React from "react";
-
+import check from "../../assets/tickCheck.svg";
+import Image from "next/image";
 
 const Property = () => {
   return (
     <div>
       <form>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[60px]">
           <div>
             <label className="fs-6" htmlFor="details">
-              Property Details
+              <span>*</span> Property Details
             </label>
             <input
               type="text"
@@ -19,7 +20,7 @@ const Property = () => {
           </div>
           <div>
             <label className="fs-6" htmlFor="year">
-              Year Built
+              <span>*</span> Year Built
             </label>
             <input
               type="number"
@@ -28,9 +29,10 @@ const Property = () => {
               placeholder="Dwelling  "
             />
           </div>
+
           <div>
             <label className="fs-6" htmlFor="front">
-              Dwelling Front
+              <span>*</span> Dwelling Front
             </label>
             <input
               type="text"
@@ -40,9 +42,22 @@ const Property = () => {
             />
           </div>
           <div></div>
+          <div className="col-span-2 border border-dashed border-[#FF6B0D] p-5">
+            <p className="font-semibold mb-5">Add ons:</p>
+            <div className="flex items-center gap-4 mb-4">
+              <Image src={check} height={19} width={19} alt="check" />
+              <p className="text-[#191E29] font-normal">Detailed Roof Adder</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <Image src={check} height={19} width={19} alt="check" />
+              <p className="text-[#191E29] font-normal">Outbuilding Adder</p>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
           <div>
             <label className="fs-6" htmlFor="occupied">
-              Occupied:
+              <span>*</span> Occupied:
             </label>
             <select>
               <option>Yes</option>
@@ -52,7 +67,7 @@ const Property = () => {
 
           <div>
             <label className="fs-6" htmlFor="owner">
-              Homeowner Present:
+              <span>*</span> Homeowner Present:
             </label>
             <select>
               <option>Yes</option>
@@ -108,11 +123,63 @@ const Property = () => {
             </label>
             <input type="number" name="layer" id="layer" placeholder="1" />
           </div>
+          <div>
+            <label className="fs-6" htmlFor="measure">
+              Fencing:
+            </label>
+            <select>
+              <option>Yes </option>
+              <option>No </option>
+            </select>
+          </div>
+          <div>
+            <label className="fs-6" htmlFor="layer">
+              Fence Material:
+            </label>
+            <input
+              type="text"
+              name="layer"
+              id="layer"
+              placeholder="Chain.Link"
+            />
+          </div>
+          <div>
+            <label className="fs-6" htmlFor="layer">
+              Roof Condition:
+            </label>
+            <input
+              type="text"
+              name="layer"
+              id="layer"
+              placeholder="Appears Good"
+            />
+          </div>
+          <div>
+            <label className="fs-6" htmlFor="layer">
+              Est Age:
+            </label>
+            <input type="text" name="layer" id="layer" placeholder="Unk" />
+          </div>
+          <div>
+            <label className="fs-6" htmlFor="measure">
+              Outbuilding:
+            </label>
+            <select>
+              <option>Yes </option>
+              <option>No </option>
+            </select>
+          </div>
+          <div>
+            <label className="fs-6" htmlFor="layer">
+              number:
+            </label>
+            <input type="number" name="layer" id="layer" placeholder="10" />
+          </div>
         </div>
 
         <div className="flex gap-4 items-center btn_set">
           <button className="cancel_btn fs-6">Cancel</button>
-          <button className="search_btn fs-6">Search</button>
+          <button className="search_btn fs-6">Save</button>
         </div>
       </form>
     </div>
