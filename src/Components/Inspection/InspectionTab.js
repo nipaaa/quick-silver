@@ -18,6 +18,8 @@ import Insured from "./Insured";
 import Property from "./Property";
 import Hazards from "./Hazards";
 import OutBuildings from "./OutBuildings";
+import Image from "next/image";
+import Attachments from "./Attachments";
 
 const InspectionTab = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -70,7 +72,10 @@ const InspectionTab = () => {
             }`}
             key={index}
           >
-            <img src={activeTab === index ? data.activePic : data.pic} alt="" />
+            <Image
+              src={activeTab === index ? data.activePic : data.pic}
+              alt=""
+            />
             <p>{data.title}</p>
           </div>
         ))}
@@ -81,6 +86,7 @@ const InspectionTab = () => {
         {activeTab === 1 && <Property />}
         {activeTab === 2 && <Hazards />}
         {activeTab === 3 && <OutBuildings />}
+        {activeTab === 4 && <Attachments />}
       </div>
     </div>
   );

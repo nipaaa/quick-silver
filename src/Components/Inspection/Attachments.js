@@ -1,23 +1,24 @@
 import React from "react";
 
-const OutBuildings = () => {
+const Attachments = () => {
   const details = [
     {
-      name: "Big Machine Shed",
-      size: "84 x 57",
+      attachmentType: "Photograph",
+      location: "Front of House",
     },
     {
-      name: "Creek Bottom Bam ",
-      size: "48 x 28",
+      attachmentType: "Photograph",
+      location: "Back of House",
     },
     {
-      name: "Hay Barn",
-      size: "50 x 45",
-      location: "South of Hwy K",
+      attachmentType: "Outbuildings",
+      note: "1 thought 6 and 7 through 12",
+      location: "1-6 & 12",
     },
     {
-      name: "Lower Field shed",
-      size: "100 x 20",
+      attachmentType: "Outbuildings",
+      note: "1 thought 6 and 7 through 12",
+      location: "1-6 Detail",
     },
   ];
   return (
@@ -26,8 +27,8 @@ const OutBuildings = () => {
         <thead>
           <tr>
             <th> </th>
-            <th className="text-left">Name </th>
-            <th className="text-left">Size </th>
+            <th className="text-left">Attachment Type </th>
+            <th className="text-left">Description / Notes </th>
             <th className="text-left">Location </th>
             <th> </th>
           </tr>
@@ -49,9 +50,9 @@ const OutBuildings = () => {
                   />
                 </svg>
               </td>
-              <td style={{ color: "#FF6B0D" }}>{data.name}</td>
-              <td>{data.size}</td>
-              <td>{data.location ? data.location : "Na"}</td>
+              <td style={{ color: "#FF6B0D" }}>{data.attachmentType}</td>
+              <td>{data.note ? data.note : "-"}</td>
+              <td>{data.location}</td>
               <td>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,20 +77,8 @@ const OutBuildings = () => {
         </p>
         <button className="search_btn">Add New</button>
       </div>
-      <div className="bg-white border border-[#EEE] pl-5 pt-5 pr-10 pb-10">
-        <p className="font-normal">
-          <span className="text-[#FF6B0D] ">Notes:</span> Property appeared to
-          be well maintained.  Lorem Ipsum Lorem Lorem Ipsum Lorem Lorem Ipsum
-          Lorem Lorem Ipsum Lorem Lorem Ipsum Lorem Lorem Ipsum Lorem Lorem
-          Ipsum Lorem Lorem Ipsum Lorem.
-        </p>
-      </div>
-      <div className="flex gap-4 items-center btn_set">
-        <button className="cancel_btn fs-6">Cancel</button>
-        <button className="search_btn fs-6">Save</button>
-      </div>
     </div>
   );
 };
 
-export default OutBuildings;
+export default Attachments;
