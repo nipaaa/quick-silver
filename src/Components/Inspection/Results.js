@@ -1,9 +1,12 @@
 import { inspectionResult } from "@/Utils/SidebarElement";
+import { useRouter } from "next/router";
 import React from "react";
 
 const Results = () => {
+
+  const Router = useRouter()
   const handleNavigate = () => {
-    Router.push("/");
+    Router.push("/dashboard/edit-inspection");
   };
 
   return (

@@ -1,14 +1,13 @@
 import React from "react";
 
-
 const Property = () => {
   return (
     <div>
       <form>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[60px]">
           <div>
             <label className="fs-6" htmlFor="details">
-              Property Details
+              <span>*</span> Property Details
             </label>
             <input
               type="text"
@@ -19,7 +18,7 @@ const Property = () => {
           </div>
           <div>
             <label className="fs-6" htmlFor="year">
-              Year Built
+              <span>*</span> Year Built
             </label>
             <input
               type="number"
@@ -28,9 +27,12 @@ const Property = () => {
               placeholder="Dwelling  "
             />
           </div>
+          <div className="col-span-2 border border-dashed border-[#FF6B0D]">
+            <p className="font-semibold mb-5">Add ons:</p>
+          </div>
           <div>
             <label className="fs-6" htmlFor="front">
-              Dwelling Front
+              <span>*</span> Dwelling Front
             </label>
             <input
               type="text"
