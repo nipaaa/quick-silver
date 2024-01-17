@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import check from "@/assets/tickCheck.svg";
+import unCheck from "@/assets/unTickCheck.svg";
 
 const datas = [
   {
@@ -39,6 +41,9 @@ const datas = [
 ];
 
 const CompanyTable = () => {
+  const [checkedItems, setCheckItems] = useState([]);
+
+  const handleCheck = () => {};
   return (
     <div>
       <table className="fs_14">
@@ -61,11 +66,15 @@ const CompanyTable = () => {
               <td>{data.phone}</td>
               <td>{data.role}</td>
               <td className="text-center">
-                <input
+                {/* <input
                   type="checkbox"
                   className="h-[19px] w-[19px] cursor-pointer"
                   style={{ accentColor: "#ff6b0d", color: "#fff" }}
-                />
+                /> */}
+                <div onClick={handleCheck}>
+                  <img src={check.src} alt="" />
+                  <img src={unCheck.src} alt="" />
+                </div>
               </td>
             </tr>
           ))}
