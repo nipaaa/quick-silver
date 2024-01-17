@@ -1,6 +1,6 @@
 import React from "react";
 
-const Buttons = ({ setActivePage }) => {
+const Buttons = ({ setActivePage, handleReferNewCompanyModal }) => {
   return (
     <div className="flex gap-[80px] mt-[40px] mb-[160px] p-[20px]">
       <button
@@ -9,7 +9,10 @@ const Buttons = ({ setActivePage }) => {
       >
         Billing Information
       </button>
-      <button className="px-[34px] py-[14px] rounded-[8px] bg-[#1E4C5A] text-[#FFFFFF] text-[14px] font-[600]">
+      <button
+        onClick={() => handleReferNewCompanyModal()}
+        className="px-[34px] py-[14px] rounded-[8px] bg-[#1E4C5A] text-[#FFFFFF] text-[14px] font-[600]"
+      >
         Refer New Company
       </button>
       <button className="px-[34px] py-[14px] rounded-[8px] bg-[#1E4C5A] text-[#FFFFFF] text-[14px] font-[600]">

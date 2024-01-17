@@ -2,14 +2,9 @@ import React, { useState } from "react";
 import creditCard from "@/assets/creditCard.png";
 import check from "@/assets/tickCheck.svg";
 import unCheck from "@/assets/unTickCheck.svg";
-import ReferNewCompanyModal from "./Modal/ReferNewCompanyModal";
+
 const BillingInfo = ({ setActivePage }) => {
   const [checkedItems, setCheckItems] = useState([]);
-
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
 
   const handleCheck = (item) => {
     if (checkedItems.includes(item)) {
@@ -223,18 +218,6 @@ const BillingInfo = ({ setActivePage }) => {
             Save
           </button>
         </div>
-        <div>
-          <button onClick={openModal}>Open Modal</button>
-          <ReferNewCompanyModal
-            isOpen={modalOpen}
-            onClose={closeModal}
-            title={"bbb"}
-          >
-            {/* Modal content goes here */}
-            <p>This is the modal content.</p>
-          </ReferNewCompanyModal>
-        </div>
-        {/* <ReferNewCompanyModal /> */}
       </div>
     </div>
   );
