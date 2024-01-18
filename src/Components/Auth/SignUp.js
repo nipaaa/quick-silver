@@ -24,6 +24,7 @@ const SignUp = () => {
               <span>*</span> Referral ID
             </label>
             <input
+              className="p-5 h-[unset]"
               type="text"
               name="referralId"
               id="referralId"
@@ -36,6 +37,7 @@ const SignUp = () => {
                 <span>*</span> First name
               </label>
               <input
+                className="p-5 h-[unset]"
                 type="text"
                 name="fname"
                 id="fname"
@@ -47,6 +49,7 @@ const SignUp = () => {
                 <span>*</span> Last name
               </label>
               <input
+                className="p-5 h-[unset]"
                 type="text"
                 name="lname"
                 id="lname"
@@ -59,6 +62,7 @@ const SignUp = () => {
               <span>*</span> Company name
             </label>
             <input
+              className="p-5 h-[unset]"
               type="text"
               name="cname"
               id="cname"
@@ -70,6 +74,7 @@ const SignUp = () => {
               <span>*</span> Email address
             </label>
             <input
+              className="p-5 h-[unset]"
               type="email"
               name="email"
               id="semail"
@@ -81,6 +86,7 @@ const SignUp = () => {
               <span>*</span> Cell phone number
             </label>
             <input
+              className="p-5 h-[unset]"
               type="tel"
               name="cell"
               id="cell"
@@ -93,7 +99,7 @@ const SignUp = () => {
             </label>
             <div className="position-relative">
               <input
-                className="mb-2"
+                className="mb-2 p-5 h-[unset]"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -119,7 +125,7 @@ const SignUp = () => {
             </label>
             <div className="position-relative">
               <input
-                className="mb-2"
+                className="mb-2 p-5 h-[unset]"
                 type={showConPassword ? "text" : "password"}
                 name="password"
                 id="password"
