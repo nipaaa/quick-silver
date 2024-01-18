@@ -21,7 +21,7 @@ const CustomModal = ({
         <div className="relative flex flex-col  bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none py-[56px]">
           {/* Header */}
           <h3 className="text-[28px] font-[700] text-center">
-            {title ? title : "Modal Title"}
+            {title ? title : ""}
           </h3>
 
           <div className="relative py-[38px] flex justify-center ">
