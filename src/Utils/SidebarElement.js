@@ -13,6 +13,7 @@ export const sidebarElement = [
     pic: dashboard,
     title: "Dashboard",
     dropdown: false,
+    path: "/dashboard",
   },
   {
     pic: inspection,
@@ -56,7 +57,8 @@ export const sidebarElement = [
   {
     pic: report,
     title: "Reports",
-    dropdown: true,
+    dropdown: false,
+    path: "/dashboard/reports",
   },
 ];
 

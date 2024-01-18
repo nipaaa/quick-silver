@@ -21,10 +21,8 @@ const Sidebar = () => {
         <div key={index}>
           <Link
             onClick={() => handleDropdownClick(index)}
-            href="#"
-            className={`link ${
-              pathname === data.subtitle?.path ? "active" : ""
-            }`}
+            href={data?.path ? data?.path : "#"}
+            className={`link ${pathname === data?.path ? "active" : ""}`}
           >
             <div className="flex items-center gap-3">
               <img src={data.pic.src} alt="" />
