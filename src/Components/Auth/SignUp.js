@@ -19,46 +19,50 @@ const SignUp = () => {
         <form>
           <h2 className="text-[32px]">Sign Up</h2>
           <p className="fs-6 subtitle">To prepare to log into the system</p>
-          <div className="w-100 mb-2">
+          <div className="mb-2">
             <label className="fs-6" htmlFor="email">
               <span>*</span> Referral ID
             </label>
             <input
+              className="p-5 h-[unset]"
               type="text"
               name="referralId"
               id="referralId"
               placeholder="Paste your referral ID or enter None if you were not refered"
             />
           </div>
-          <div className="d-flex align-items-center gap-3 w-100 mb-4">
-            <div className="w-100">
-              <label className="fs-6" htmlFor="fname">
-                <span>*</span> First name
-              </label>
-              <input
-                type="text"
-                name="fname"
-                id="fname"
-                placeholder="Enter your  first name"
-              />
-            </div>
-            <div className="w-100">
-              <label className="fs-6" htmlFor="email">
-                <span>*</span> Last name
-              </label>
-              <input
-                type="text"
-                name="lname"
-                id="lname"
-                placeholder="Enter your last name"
-              />
-            </div>
+
+          <div className="mb-2">
+            <label className="fs-6" htmlFor="fname">
+              <span>*</span> First name
+            </label>
+            <input
+              className="p-5 h-[unset]"
+              type="text"
+              name="fname"
+              id="fname"
+              placeholder="Enter your  first name"
+            />
           </div>
+          <div className="mb-2">
+            <label className="fs-6" htmlFor="email">
+              <span>*</span> Last name
+            </label>
+            <input
+              className="p-5 h-[unset]"
+              type="text"
+              name="lname"
+              id="lname"
+              placeholder="Enter your last name"
+            />
+          </div>
+
           <div className="mb-4">
             <label className="fs-6" htmlFor="cname">
               <span>*</span> Company name
             </label>
             <input
+              className="p-5 h-[unset]"
               type="text"
               name="cname"
               id="cname"
@@ -70,6 +74,7 @@ const SignUp = () => {
               <span>*</span> Email address
             </label>
             <input
+              className="p-5 h-[unset]"
               type="email"
               name="email"
               id="semail"
@@ -81,6 +86,7 @@ const SignUp = () => {
               <span>*</span> Cell phone number
             </label>
             <input
+              className="p-5 h-[unset]"
               type="tel"
               name="cell"
               id="cell"
@@ -93,7 +99,7 @@ const SignUp = () => {
             </label>
             <div className="position-relative">
               <input
-                className="mb-2"
+                className="mb-2 p-5 h-[unset]"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -119,7 +125,7 @@ const SignUp = () => {
             </label>
             <div className="position-relative">
               <input
-                className="mb-2"
+                className="mb-2 p-5 h-[unset]"
                 type={showConPassword ? "text" : "password"}
                 name="password"
                 id="password"

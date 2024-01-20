@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import CustomModal from "../Shared/Modal/CustomModal";
+import AttachmentAdd from "../Shared/Modal/AttachmentAdd";
 
 const Attachments = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
   const details = [
     {
       attachmentType: "Photograph",
@@ -75,8 +81,20 @@ const Attachments = () => {
         <p className="text-[#191E29] text-sm font-normal">
           Showing 5 to 5 of 5 entries
         </p>
-        <button className="search_btn">Add New</button>
+        <button onClick={openModal} className="search_btn">
+          Add New
+        </button>
       </div>
+
+      <CustomModal
+        isOpen={modalOpen}
+        onClose={closeModal}
+        submitTitle={"Save"}
+        title="Image Upload / Edit"
+        onSave={closeModal}
+      >
+        <AttachmentAdd />
+      </CustomModal>
     </div>
   );
 };

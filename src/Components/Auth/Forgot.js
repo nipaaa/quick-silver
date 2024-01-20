@@ -22,6 +22,7 @@ const Forgot = () => {
               <span>*</span> Email Address
             </label>
             <input
+                className="p-5 h-[unset]"
               type="email"
               name="email"
               id="email"
@@ -31,7 +32,7 @@ const Forgot = () => {
           <p className="err_sms mb-5">Invalid Email Address</p>
 
           <Link href="/reset-password">
-            <button className="signIn_btn fs-5">Reset Password</button>
+            <button className="signIn_btn text-[20px]">Reset Password</button>
           </Link>
         </form>
         <div></div>

@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import CustomModal from "../Shared/Modal/CustomModal";
+import OutBuildingAddNew from "../Shared/Modal/OutBuildingAddNew";
 
 const OutBuildings = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   const details = [
     {
       name: "Big Machine Shed",
@@ -74,7 +81,9 @@ const OutBuildings = () => {
         <p className="text-[#191E29] text-sm font-normal">
           Showing 5 to 5 of 5 entries
         </p>
-        <button className="search_btn">Add New</button>
+        <button onClick={openModal} className="search_btn">
+          Add New
+        </button>
       </div>
       <div className="bg-white border border-[#EEE] pl-5 pt-5 pr-10 pb-10">
         <p className="font-normal">
@@ -88,6 +97,16 @@ const OutBuildings = () => {
         <button className="cancel_btn fs-6">Cancel</button>
         <button className="search_btn fs-6">Save</button>
       </div>
+
+      <CustomModal
+        isOpen={modalOpen}
+        onClose={closeModal}
+        submitTitle={"Save"}
+        title="Add / Edit Outbuilding"
+        onSave={closeModal}
+      >
+        <OutBuildingAddNew />
+      </CustomModal>
     </div>
   );
 };
