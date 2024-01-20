@@ -21,7 +21,7 @@ const CustomModal = ({
         <div className="relative flex flex-col  bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none py-[56px]">
           {/* Header */}
           <h3 className="text-[28px] font-[700] text-center">
-            {title ? title : "Modal Title"}
+            {title ? title : ""}
           </h3>
 
           <div className="relative py-[38px] flex justify-center ">
@@ -29,10 +29,18 @@ const CustomModal = ({
           </div>
           {/* Footer */}
           <div className="flex items-center justify-center gap-[20px]">
-            <button className="cancel_btn " type="button" onClick={onClose}>
+            <button
+              className="cancel_btn w-[140px]"
+              type="button"
+              onClick={onClose}
+            >
               Cancel
             </button>
-            <button className="search_btn" type="button" onClick={onSave}>
+            <button
+              className="search_btn w-[140px]"
+              type="button"
+              onClick={onSave}
+            >
               {submitTitle}
             </button>
           </div>

@@ -12,7 +12,7 @@ const Reset = () => {
       <div className="signIn">
         <div className="flex justify-end gap-2 items-center">
           <p className="dont">Don’t have any account?</p>{" "}
-          <Link href="/" className="signUn_btn ">
+          <Link href="/" className="signUn_btn text-[20px] ">
             Sign In
           </Link>
         </div>
@@ -28,7 +28,7 @@ const Reset = () => {
             </label>
             <div className="relative">
               <input
-                className="mb-2"
+                className="mb-2 p-5 h-[unset]"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -54,7 +54,7 @@ const Reset = () => {
             </label>
             <div className="relative">
               <input
-                className="mb-2"
+                className="mb-2 p-5 h-[unset]"
                 type={showConPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -75,9 +75,7 @@ const Reset = () => {
             </div>
           </div>
 
-          <Link href="/reset_password">
-            <button className="signIn_btn">Reset Password</button>
-          </Link>
+          <button className="signIn_btn text-[20px]">Reset Password</button>
         </form>
         <div></div>
       </div>
