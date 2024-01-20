@@ -1,22 +1,27 @@
-import profile from "../../assets/profile.png";
-import arrow from "../../assets/green-arrow.png";
-import dot from "../../assets/dot.png";
-import manage from "../../assets/manage.png";
-import signOut from "../../assets/sign-out.png";
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
+import dot from "../../assets/dot.png";
+import arrow from "../../assets/green-arrow.png";
+import manage from "../../assets/manage.png";
+import profile from "../../assets/profile.png";
+import signOut from "../../assets/sign-out.png";
+import { IoReorderThreeOutline } from "react-icons/io5";
 
-const Header = () => {
+const Header = ({ handleSidebar }) => {
   const [show, setShow] = useState(false);
   return (
-    <div className="header ">
-      <h2 className="text-[28px] font-bold">Office Dashboard</h2>
-      <div className="flex items-center gap-5">
+    <div className="header flex md:flex-none flex-wrap md:flex-nowrap gap-4 md:gap-0">
+      <div className="header_title flex flex-wrap gap-4">
+        <h2 className="text-[28px] font-bold">Office Dashboard</h2>
+        <button onClick={handleSidebar} className="block md:hidden">
+          <IoReorderThreeOutline />
+        </button>
+      </div>
+      <div className="flex flex-wrap md:flex-nowrap items-center gap-5">
         <input type="search" placeholder="Search" />
         <div
           onClick={() => setShow(!show)}
-          className="flex items-center gap-2 w-full profile cursor-pointer "
-        >
+          className="flex items-center gap-2 w-full profile cursor-pointer ">
           <img
             height={40}
             width={40}
@@ -45,16 +50,14 @@ const Header = () => {
                 <Link
                   style={{ display: "flex" }}
                   className="  items-center gap-3 "
-                  href="#"
-                >
+                  href="#">
                   <img src={manage.src} alt="" />
                   Manage account
                 </Link>
                 <Link
                   style={{ display: "flex" }}
                   className="  items-center gap-3"
-                  href="#"
-                >
+                  href="#">
                   <img src={signOut.src} alt="" />
                   Sign Out
                 </Link>

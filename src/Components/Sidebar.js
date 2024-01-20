@@ -4,8 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import { sidebarElement } from "@/Utils/SidebarElement";
 import { usePathname } from "next/navigation";
+import { IoMdClose } from "react-icons/io";
 
-const Sidebar = () => {
+const Sidebar = ({ showSideBar, handleSidebar }) => {
+  console.log("sidebar open: ", showSideBar);
   const [openIndex, setOpenIndex] = useState(null);
 
   const handleDropdownClick = (index) => {
@@ -13,17 +15,25 @@ const Sidebar = () => {
   };
   const pathname = usePathname();
   return (
-    <div className="sidebar">
-      <Link href="/" className="logo inline-block">
-        <img src={logo.src} alt="" />
-      </Link>
+    <div
+      className={`sidebar ${
+        showSideBar ? "fixed" : "hidden"
+      } z-10 md:z-0 md:block`}>
+      <div className={"logo flex items-center justify-between"}>
+        <Link href="/" className="inline-block">
+          <img src={logo.src} alt="" />
+        </Link>
+        <button onClick={handleSidebar}>
+          <IoMdClose className="text-white" />
+        </button>
+      </div>
+
       {sidebarElement.map((data, index) => (
         <div key={index}>
           <Link
             onClick={() => handleDropdownClick(index)}
             href={data?.path ? data?.path : "#"}
-            className={`link ${pathname === data?.path ? "active" : ""}`}
-          >
+            className={`link ${pathname === data?.path ? "active" : ""}`}>
             <div className="flex items-center gap-3">
               <img src={data.pic.src} alt="" />
               <p>{data.title}</p>
@@ -41,8 +51,7 @@ const Sidebar = () => {
               <div key={subIndex}>
                 <Link
                   className="subLink flex items-center gap-3"
-                  href={`${subData?.path}`}
-                >
+                  href={`${subData?.path}`}>
                   <img src={subData.pic.src} alt="" />
                   <p>{subData.title}</p>
                 </Link>
