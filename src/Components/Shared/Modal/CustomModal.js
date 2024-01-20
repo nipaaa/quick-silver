@@ -29,10 +29,18 @@ const CustomModal = ({
           </div>
           {/* Footer */}
           <div className="flex items-center justify-center gap-[20px]">
-            <button className="cancel_btn " type="button" onClick={onClose}>
+            <button
+              className="cancel_btn w-[140px]"
+              type="button"
+              onClick={onClose}
+            >
               Cancel
             </button>
-            <button className="search_btn" type="button" onClick={onSave}>
+            <button
+              className="search_btn w-[140px]"
+              type="button"
+              onClick={onSave}
+            >
               {submitTitle}
             </button>
           </div>

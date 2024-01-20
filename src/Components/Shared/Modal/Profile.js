@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import profile from "../../assets/profile-big.png";
-import eyeOff from "../../assets/eye-off.png";
-import eye from "../../assets/eye.png";
+import profile from "../../../assets/profile-big.png";
+import eyeOff from "../../../assets/eye-off.png";
+import eye from "../../../assets/eye.png";
 import Image from "next/image";
 
 const Profile = () => {

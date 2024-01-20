@@ -6,7 +6,7 @@ import signOut from "../../assets/sign-out.png";
 import { useState } from "react";
 import Link from "next/link";
 import CustomModal from "./Modal/CustomModal";
-import Profile from "./Profile";
+import Profile from "./Modal/Profile";
 
 const Header = () => {
   const [show, setShow] = useState(false);
