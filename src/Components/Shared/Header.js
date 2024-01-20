@@ -36,7 +36,10 @@ const Header = () => {
           </div>
           {show && (
             <div className="flex items-start gap-4 justify-between profile_box fs_18">
-              <div onClick={openModal} className="flex items-start gap-4  ">
+              <div
+                onClick={openModal}
+                className="flex items-start gap-4 cursor-pointer"
+              >
                 <img
                   height={59}
                   width={59}
