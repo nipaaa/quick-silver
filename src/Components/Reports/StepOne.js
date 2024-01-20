@@ -1,7 +1,9 @@
 import ReportCard from "@/Utils/ReportCard";
 import React from "react";
+import ReportTable from "./ReportTable";
 
 const StepOne = () => {
+
   return (
     <div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -51,6 +53,8 @@ const StepOne = () => {
         <ReportCard label="Outbuilding:" value="Yes" />
         <ReportCard label="Amount:" value="12" />
       </div>
+<ReportTable/>
+
     </div>
   );
 };
