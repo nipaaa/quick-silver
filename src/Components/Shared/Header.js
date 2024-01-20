@@ -1,23 +1,23 @@
 import Link from "next/link";
 import { useState } from "react";
+import { IoReorderThreeOutline } from "react-icons/io5";
 import dot from "../../assets/dot.png";
 import arrow from "../../assets/green-arrow.png";
 import manage from "../../assets/manage.png";
 import profile from "../../assets/profile.png";
 import signOut from "../../assets/sign-out.png";
-import { IoReorderThreeOutline } from "react-icons/io5";
 
 const Header = ({ handleSidebar }) => {
   const [show, setShow] = useState(false);
   return (
     <div className="header flex md:flex-none flex-wrap md:flex-nowrap gap-4 md:gap-0">
-      <div className="header_title flex flex-wrap gap-4">
+      <div className="header_title flex items-center flex-wrap gap-4">
         <h2 className="text-[28px] font-bold">Office Dashboard</h2>
         <button onClick={handleSidebar} className="block md:hidden">
-          <IoReorderThreeOutline />
+          <IoReorderThreeOutline className="text-xl font-bold" />
         </button>
       </div>
-      <div className="flex flex-wrap md:flex-nowrap items-center gap-5">
+      <div className="flex flex-wrap md:flex-nowrap items-center gap-5 relative">
         <input type="search" placeholder="Search" />
         <div
           onClick={() => setShow(!show)}
@@ -32,9 +32,10 @@ const Header = ({ handleSidebar }) => {
           <p className="name">John Doe</p>
           <img src={arrow.src} alt="" />
         </div>
+
         {show && (
-          <div className="flex items-start gap-4 justify-between profile_box fs_18">
-            <div className="flex items-start gap-4  ">
+          <div className="flex items-start absolute gap-4 justify-between profile_box top-[110px] md:top-[50px] right-[0px] md:right-[30px] md:width-[496px] height-[100%] fs_18 z-10">
+            <div className="flex flex-wrap items-start gap-4 ">
               <img
                 height={59}
                 width={59}
