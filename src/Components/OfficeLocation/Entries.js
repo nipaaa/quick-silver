@@ -1,9 +1,8 @@
 import { officeEntries } from "@/Utils/SidebarElement";
-import React from "react";
 
 const Entries = () => {
   return (
-    <div className="office_entries">
+    <div className="office_entries overflow-x-auto">
       <table className="fs_14">
         <thead>
           <tr className="text-left">

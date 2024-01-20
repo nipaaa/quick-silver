@@ -165,10 +165,6 @@ table td.dot::before {
   box-shadow: 5px 10px 50px -2px rgba(0, 0, 0, 0.15);
   padding: 30px;
   min-height: 283px;
-  top: 100px;
-  right: 30px;
-  height: 100%;
-  width: 496px;
 }
 
 .header a {
@@ -467,14 +463,12 @@ span.recharts-legend-item-text {
 }
 
 .inspection_tab .active {
-  color: var(--secondary-color-1st-secondary-1st-secondary-color,
-      #ff6b0d) !important;
+  color: var(--secondary-color-1st-secondary-1st-secondary-color, #ff6b0d) !important;
   position: relative;
 }
 
 .inspection_tab .active::after {
-  background-color: var(--secondary-color-1st-secondary-1st-secondary-color,
-      #ff6b0d);
+  background-color: var(--secondary-color-1st-secondary-1st-secondary-color, #ff6b0d);
   position: absolute;
   content: "";
   width: 100%;
@@ -487,8 +481,6 @@ span.recharts-legend-item-text {
   background-color: #fafdff;
   padding: 30px;
 }
-
-
 
 .btn_set {
   margin: 40px 0;
@@ -516,7 +508,6 @@ span.recharts-legend-item-text {
   border-radius: 4px;
   border: 1px solid #dee8ed;
   background: #fff;
-
   color: #191e29;
   font-size: 14px;
   font-style: normal;
@@ -531,4 +522,3 @@ span.recharts-legend-item-text {
   font-weight: 600;
   line-height: normal;
 }
-

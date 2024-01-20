@@ -2,7 +2,7 @@ import React from "react";
 
 const InspectionTable = () => {
   return (
-    <div>
+    <div className="overflow-x-auto">
       <table className="fs_14">
         <thead>
           <tr  className="text-left">
