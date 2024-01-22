@@ -1,27 +1,27 @@
-import insured from "../../assets/insured.png";
-import insuredActive from "../../assets/insured-active.png";
-import property from "../../assets/property.png";
-import propertyActive from "../../assets/property-active.png";
-import hazard from "../../assets/hazard.png";
-import hazardActive from "../../assets/hazard-active.png";
-import outbuilding from "../../assets/outbuilding.png";
-import outbuildingActive from "../../assets/outbuilding-active.png";
-import attachment from "../../assets/attachments.png";
-import attachmentActive from "../../assets/attachments-active.png";
-import action from "../../assets/action.png";
 import actionActive from "../../assets/action-active.png";
-import history from "../../assets/history.png";
+import action from "../../assets/action.png";
+import attachmentActive from "../../assets/attachments-active.png";
+import attachment from "../../assets/attachments.png";
+import hazardActive from "../../assets/hazard-active.png";
+import hazard from "../../assets/hazard.png";
 import historyActive from "../../assets/history-active.png";
+import history from "../../assets/history.png";
+import insuredActive from "../../assets/insured-active.png";
+import insured from "../../assets/insured.png";
+import outbuildingActive from "../../assets/outbuilding-active.png";
+import outbuilding from "../../assets/outbuilding.png";
+import propertyActive from "../../assets/property-active.png";
+import property from "../../assets/property.png";
 
-import { useState } from "react";
-import Insured from "./Insured";
-import Property from "./Property";
-import Hazards from "./Hazards";
-import OutBuildings from "./OutBuildings";
 import Image from "next/image";
-import Attachments from "./Attachments";
+import { useState } from "react";
 import Actions from "./Actions";
+import Attachments from "./Attachments";
+import Hazards from "./Hazards";
 import HistoryLog from "./HistoryLog";
+import Insured from "./Insured";
+import OutBuildings from "./OutBuildings";
+import Property from "./Property";
 
 const InspectionTab = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -64,7 +64,7 @@ const InspectionTab = () => {
   ];
   return (
     <div>
-      <div className="inspection_tab">
+      <div className="inspection_tab flex flex-wrap items-center gap-8 lg:gap-[70px] border border-b-[#fafdff] pt-[64px] pr-[30px] pl-[30px]">
         {tabs.map((data, index) => (
           <div
             onClick={() => setActiveTab(index)}
@@ -72,8 +72,7 @@ const InspectionTab = () => {
             className={`flex gap-1 items-center tab   ${
               activeTab === index && "active"
             }`}
-            key={index}
-          >
+            key={index}>
             <Image
               src={activeTab === index ? data.activePic : data.pic}
               alt=""

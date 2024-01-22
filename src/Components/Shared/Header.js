@@ -42,9 +42,7 @@ const Header = ({ handleSidebar }) => {
 
           {show && (
             <div className="flex items-start absolute gap-4 justify-between profile_box top-[110px] md:top-[50px] right-[0px] md:right-[30px] md:width-[496px] height-[100%] fs_18 z-10">
-              <div
-                className="flex flex-wrap items-start gap-4"
-               >
+              <div className="flex flex-wrap items-start gap-4">
                 <img
                   height={59}
                   width={59}
