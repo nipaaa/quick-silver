@@ -4,8 +4,8 @@ const Search = () => {
   return (
     <div className="search_form">
       <form>
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-full">
+        <div className="md:grid md:grid-cols-12 md:gap-5 flex flex-wrap items-center gap-4 mb-4">
+          <div className="md:col-span-4 w-full">
             <label htmlFor="name">Enter the insured’s name</label>
             <input
               type="text"
@@ -14,7 +14,7 @@ const Search = () => {
               placeholder="Type here..."
             />
           </div>
-          <div className="w-full">
+          <div className="md:col-span-4 w-full">
             <label htmlFor="assign">Assigned to</label>
             <select id="assign">
               <option selected disabled>
@@ -24,7 +24,7 @@ const Search = () => {
               <option value="">B</option>
             </select>
           </div>
-          <div className="w-full">
+          <div className="md:col-span-4 w-full">
             <label htmlFor="status">Status</label>
             <select id="assign">
               <option selected disabled>

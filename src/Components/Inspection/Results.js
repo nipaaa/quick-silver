@@ -30,8 +30,12 @@ const Results = () => {
           </thead>
           <tbody>
             {inspectionResult.map((data, index) => (
-              <tr onClick={handleNavigate} key={index}>
-                <td style={{ color: "#FF6B0D" }}>{data.insured}</td>
+              <tr key={index}>
+                <td style={{ color: "#FF6B0D" }}>
+                  <p onClick={handleNavigate} className="cursor-pointer">
+                  {data.insured}
+                  </p>
+                </td>
                 <td>{data.assigned}</td>
                 <td>{data.DueDate}</td>
                 <td className="text-center">{data.statusUpdate} </td>

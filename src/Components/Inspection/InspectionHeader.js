@@ -18,9 +18,10 @@ const InspectionHeader = () => {
     },
   ];
   return (
-    <div className="inspection_header">
+
+    <div className="inspection_header flex flex-wrap items-center gap-8 lg:gap-[92px] mt-[48px] mr-[30px] mb-[21px] ml-[30px]">
       {options.map((data, index) => (
-        <div className="flex items-center gap-2" key={index}>
+        <div className="flex flex-wrap items-center gap-2" key={index}>
           <img src={data.pic.src} alt="" />
           <p>{data.title}</p>
         </div>

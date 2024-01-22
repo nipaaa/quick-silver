@@ -4,7 +4,7 @@ const Insured = () => {
   return (
     <div>
       <form>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[60px] items-end">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-[60px] items-end">
           <div>
             <label className="fs-6" htmlFor="date">
               <span>*</span> Due Date:
@@ -30,6 +30,7 @@ const Insured = () => {
               <span>*</span> Policy Number:
             </label>
             <input
+              
               type="text"
               name="policyNo"
               id="policyNo"
