@@ -3,7 +3,7 @@ import React from "react";
 const CompanyInfo = () => {
   return (
     <div className="p-[30px] bg-[#FAFDFF]">
-      <div className="grid grid-cols-3 gap-y-[30px] gap-x-[80px] ">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-y-[30px] lg:gap-x-[80px] ">
         <div>
           <label className="inputLabel">
             <span>*</span> Company Name:
@@ -16,7 +16,7 @@ const CompanyInfo = () => {
           />
         </div>
         <div className="flex  items-center">
-          <label className="inputLabel mt-10">Current Credits: 1,245</label>
+          <label className="inputLabel lg:mt-10">Current Credits: 1,245</label>
         </div>
         <div className="row-span-2"></div>
 
@@ -71,7 +71,7 @@ const CompanyInfo = () => {
           <input type="" name="" defaultValue="65041" className="inputField" />
         </div>
       </div>
-      <div className="flex gap-[20px] mt-[40px]">
+      <div className="flex flex-wrap gap-[20px] mt-[40px]">
         <button className="px-[46px] py-[17px] rounded-[12px] bg-[#E8ECEF] text-[#191E29] text-[16px] font-[600]">
           Cancel
         </button>

@@ -52,10 +52,10 @@ const CompanyTable = () => {
     }
   };
   return (
-    <div>
+    <div className="overflow-x-scroll no_scrollbar">
       <table className="fs_14">
         <thead>
-          <tr>
+          <tr className="whitespace-nowrap">
             <th className="text-start">ID</th>
             <th className="text-start">First Name - Last Name </th>
             <th className="text-start">Email</th>
