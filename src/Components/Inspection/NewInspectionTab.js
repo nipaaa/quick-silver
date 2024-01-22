@@ -29,7 +29,7 @@ const NewInspectionTab = () => {
         <Image src={inspection} alt="icon" width={16} height={16} />
         <p className="font-medium">Unassigned Inspection</p>
       </div>
-      <div className="inspection_tab">
+      <div className="inspection_tab  overflow-x-auto no_scrollbar flex  items-center gap-8 lg:gap-[70px] border-b border-b-[#fafdff] pt-[64px] pr-[30px] pl-[30px]">
         {tabs.map((data, index) => (
           <div
             onClick={() => setActiveTab(index)}
