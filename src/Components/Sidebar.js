@@ -9,13 +9,19 @@ import logo from "../assets/logo.png";
 const Sidebar = ({ showSideBar, handleSidebar }) => {
   console.log("sidebar open: ", showSideBar);
   const [openIndex, setOpenIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const handleDropdownClick = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
   const pathname = usePathname();
   return (
-    <div className={`sidebar ${showSideBar ? "fixed" : "hidden"} z-10 md:z-0 md:block`}>
+    <div
+      className={`sidebar ${
+        showSideBar ? "fixed" : "hidden"
+      } z-10 md:z-0 md:block`}
+    >
       <div className={"logo flex items-center justify-between"}>
         <Link href="/" className="inline-block">
           <img src={logo.src} alt="" />
@@ -30,7 +36,10 @@ const Sidebar = ({ showSideBar, handleSidebar }) => {
           <Link
             onClick={() => handleDropdownClick(index)}
             href={data?.path ? data?.path : "#"}
-            className={`link ${pathname === data?.path ? "active" : ""}`}>
+            className={`link ${
+              pathname === data?.path || activeIndex === index ? "active" : ""
+            }`}
+          >
             <div className="flex items-center gap-3">
               <img src={data.pic.src} alt="" />
               <p>{data.title}</p>
@@ -47,8 +56,11 @@ const Sidebar = ({ showSideBar, handleSidebar }) => {
             data.subtitle?.map((subData, subIndex) => (
               <div key={subIndex}>
                 <Link
-                  className="subLink flex items-center gap-3"
-                  href={`${subData?.path}`}>
+                  className={`${
+                    pathname === subData?.path ? "active" : ""
+                  } subLink flex items-center gap-3`}
+                  href={`${subData?.path}`}
+                >
                   <img src={subData.pic.src} alt="" />
                   <p>{subData.title}</p>
                 </Link>
