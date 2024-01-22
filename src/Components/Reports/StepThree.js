@@ -4,7 +4,7 @@ import report2 from "../../assets/reportstep.png";
 
 const StepThree = () => {
   return (
-    <div>
+    <div className="overflow-x-scroll no_scrollbar">
       <table className="border mb-8">
         <thead>
           <tr>
