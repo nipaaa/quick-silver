@@ -6,7 +6,7 @@ const NewProperty = () => {
   return (
     <div className="max-w-[509px] w-full">
       <form>
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-[60px] mb-[30px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-[60px] mb-[30px]">
           <div>
             <label className="fs-6" htmlFor="details">
               <span>*</span> Property Details
@@ -62,8 +62,8 @@ const NewProperty = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 justify-between">
-          <div className="flex gap-4 items-center btn_set">
+        <div className="flex flex-wrap items-center gap-2 justify-between">
+          <div className="flex flex-wrap gap-4 items-center btn_set">
             <button className="cancel_btn fs-6">Cancel</button>
             <button className="search_btn fs-6">Save</button>
           </div>

@@ -20,7 +20,7 @@ const BillingInfo = ({ setActivePage }) => {
         Current Credits: 1,245
       </h4>
       <div className="bg-[#fafdff] px-[26px]">
-        <div className="grid grid-cols-3 gap-x-[80px] gap-y-[16px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-x-[80px] lg:gap-y-[16px]">
           <div>
             <label className="inputLabel">
               <span>*</span> Billing Name:

@@ -1,4 +1,3 @@
-
 import CustomModal from "@/Components/Shared/Modal/CustomModal";
 import DashboardLayout from "@/Layout/DashboardLayout";
 import React, { useState } from "react";
@@ -23,28 +22,31 @@ const CompanyLists = () => {
           <p className="text-[#1E4C5A] font-[600] pl-[30px] pt-[31px] pb-[15px]">
             Policy Holder List
           </p>
-          <table className="fs_14">
-            <thead>
-              <tr>
-                <th className="text-start">ID</th>
-                <th className="text-start">Display Value</th>
-                <th className="text-start">Comment/Note Visible</th>
-                <th className="text-start">Comment/Note Required</th>
-                <th className="text-center">Start Date</th>
-                <th className="text-center">End Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td style={{ color: "#FF6B0D" }}>Bent Oak Mutual</td>
-                <td>F</td>
-                <td>F</td>
-                <td className="text-center">1/1/1900</td>
-                <td className="text-center">1/1/2100</td>
-              </tr>
-            </tbody>
-          </table>
+
+          <div className="overflow-x-auto no_scrollbar">
+            <table className="fs_14">
+              <thead>
+                <tr className="whitespace-nowrap">
+                  <th className="text-start">ID</th>
+                  <th className="text-start">Display Value</th>
+                  <th className="text-start">Comment/Note Visible</th>
+                  <th className="text-start">Comment/Note Required</th>
+                  <th className="text-center">Start Date</th>
+                  <th className="text-center">End Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td style={{ color: "#FF6B0D" }}>Bent Oak Mutual</td>
+                  <td>F</td>
+                  <td>F</td>
+                  <td className="text-center">1/1/1900</td>
+                  <td className="text-center">1/1/2100</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <button
             onClick={handleReferNewCompanyModal}
@@ -57,28 +59,30 @@ const CompanyLists = () => {
           <p className="text-[#1E4C5A] font-[600] pl-[30px] pt-[31px] pb-[15px]">
             Add On List
           </p>
-          <table className="fs_14">
-            <thead>
-              <tr>
-                <th className="text-start">ID</th>
-                <th className="text-start">Display Value</th>
-                <th className="text-start">Comment/Note Visible</th>
-                <th className="text-start">Comment/Note Required</th>
-                <th className="text-center">Start Date</th>
-                <th className="text-center">End Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td style={{ color: "#FF6B0D" }}>Detailed Roof addr</td>
-                <td>F</td>
-                <td>F</td>
-                <td className="text-center">1/1/1900</td>
-                <td className="text-center">1/1/2100</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="overflow-x-auto no_scrollbar">
+            <table className="fs_14">
+              <thead>
+                <tr className="whitespace-nowrap">
+                  <th className="text-start">ID</th>
+                  <th className="text-start">Display Value</th>
+                  <th className="text-start">Comment/Note Visible</th>
+                  <th className="text-start">Comment/Note Required</th>
+                  <th className="text-center">Start Date</th>
+                  <th className="text-center">End Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td style={{ color: "#FF6B0D" }}>Detailed Roof addr</td>
+                  <td>F</td>
+                  <td>F</td>
+                  <td className="text-center">1/1/1900</td>
+                  <td className="text-center">1/1/2100</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <button
             onClick={handleReferNewCompanyModal}
@@ -91,28 +95,31 @@ const CompanyLists = () => {
           <p className="text-[#1E4C5A] font-[600] pl-[30px] pt-[31px] pb-[15px]">
             Hazard List
           </p>
-          <table className="fs_14">
-            <thead>
-              <tr>
-                <th className="text-start">ID</th>
-                <th className="text-start">Display Value</th>
-                <th className="text-start">Comment/Note Visible</th>
-                <th className="text-start">Comment/Note Required</th>
-                <th className="text-center">Start Date</th>
-                <th className="text-center">End Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td style={{ color: "#FF6B0D" }}>Aggressive Dogs</td>
-                <td>F</td>
-                <td>F</td>
-                <td className="text-center">1/1/1900</td>
-                <td className="text-center">1/1/2100</td>
-              </tr>
-            </tbody>
-          </table>
+
+          <div className="overflow-x-auto no_scrollbar">
+            <table className="fs_14">
+              <thead>
+                <tr className="whitespace-nowrap">
+                  <th className="text-start">ID</th>
+                  <th className="text-start">Display Value</th>
+                  <th className="text-start">Comment/Note Visible</th>
+                  <th className="text-start">Comment/Note Required</th>
+                  <th className="text-center">Start Date</th>
+                  <th className="text-center">End Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td style={{ color: "#FF6B0D" }}>Aggressive Dogs</td>
+                  <td>F</td>
+                  <td>F</td>
+                  <td className="text-center">1/1/1900</td>
+                  <td className="text-center">1/1/2100</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <button
             onClick={handleReferNewCompanyModal}

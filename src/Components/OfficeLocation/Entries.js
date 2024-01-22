@@ -5,7 +5,7 @@ const Entries = () => {
     <div className="office_entries overflow-x-auto no_scrollbar">
       <table className="fs_14">
         <thead>
-          <tr className="text-left">
+          <tr className="text-left whitespace-nowrap">
             <th>Entry Date</th>
             <th>Due Date</th>
             <th>Assigned To</th>

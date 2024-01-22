@@ -36,10 +36,10 @@ const datas = [
 
 const Entities = () => {
   return (
-    <div className="mt-[30px]">
+    <div className="mt-[30px] overflow-x-scroll no_scrollbar">
       <table className="fs_14">
         <thead>
-          <tr className="text-left">
+          <tr className="text-left whitespace-nowrap">
             <th className="text-start">ID</th>
             <th className="text-start">Company Name </th>
             <th className="text-start">Address</th>
