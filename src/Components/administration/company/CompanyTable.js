@@ -70,7 +70,7 @@ const CompanyTable = () => {
               <td>{index + 1}</td>
               <td style={{ color: "#FF6B0D" }}>{data.name}</td>
               <td>{data.email}</td>
-              <td>{data.phone}</td>
+              <td className="whitespace-nowrap">{data.phone}</td>
               <td>{data.role}</td>
               <td className="text-center">
                 {/* <input

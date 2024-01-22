@@ -88,7 +88,7 @@ const HistoryLog = () => {
                   {data.time}
                 </td>
                 <td className="whitespace-nowrap">{data.user}</td>
-                <td>{data.phone}</td>
+                <td className="whitespace-nowrap">{data.phone}</td>
                 <td>{data.email}</td>
                 <td>{data.description}</td>
               </tr>

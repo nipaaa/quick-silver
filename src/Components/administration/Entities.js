@@ -53,7 +53,7 @@ const Entities = () => {
               <td>{index + 1}</td>
               <td style={{ color: "#FF6B0D" }}>{data.companyName}</td>
               <td>{data.address}</td>
-              <td>{data.phone}</td>
+              <td className="whitespace-nowrap">{data.phone}</td>
               <td className="text-center">
                 <button>
                   <img src={deleteIcon?.src} alt="" />
