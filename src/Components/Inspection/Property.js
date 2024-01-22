@@ -6,7 +6,7 @@ const Property = () => {
   return (
     <div>
       <form>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-[60px]">
           <div>
             <label className="fs-6" htmlFor="details">
               <span>*</span> Property Details
@@ -42,7 +42,7 @@ const Property = () => {
             />
           </div>
           <div></div>
-          <div className="col-span-2 border border-dashed border-[#FF6B0D] p-5">
+          <div className="lg:col-span-2 border border-dashed border-[#FF6B0D] p-5">
             <p className="font-semibold mb-5">Add ons:</p>
             <div className="flex items-center gap-4 mb-4">
               <Image src={check} height={19} width={19} alt="check" />

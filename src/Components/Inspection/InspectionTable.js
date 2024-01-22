@@ -5,7 +5,7 @@ const InspectionTable = () => {
     <div className="overflow-x-auto no_scrollbar">
       <table className="fs_14">
         <thead>
-          <tr  className="text-left">
+          <tr className="text-left whitespace-nowrap">
             <th>Date Created </th>
             <th>Modified </th>
             <th>Email </th>

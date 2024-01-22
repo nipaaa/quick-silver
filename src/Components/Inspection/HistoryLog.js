@@ -53,8 +53,8 @@ const HistoryLog = () => {
   ];
   return (
     <div className="bg-white border border-[#EEE] p-5">
-      <div className="flex justify-between items-center gap-4 mb-5">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap justify-between items-center gap-4 mb-5">
+        <div className="flex flex-wrap items-center gap-2">
           <Image src={history} width={16} height={16} alt="history" />
           <p className="font-medium text-[#191E29]">Inspection History</p>
         </div>
@@ -69,11 +69,11 @@ const HistoryLog = () => {
         </div>
       </div>
 
-      <div className="border border-[#EEE]">
+      <div className="border border-[#EEE] overflow-x-scroll no_scrollbar">
         <table>
           <thead>
-            <tr className="text-left">
-              <th className="whitespace-nowrap">Event Date</th>
+            <tr className="text-left whitespace-nowrap">
+              <th>Event Date</th>
               <th>User</th>
               <th>Phone</th>
               <th>Email</th>
