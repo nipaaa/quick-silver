@@ -3,7 +3,6 @@ import React from "react";
 import ReportTable from "./ReportTable";
 
 const StepOne = () => {
-
   return (
     <div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -53,8 +52,14 @@ const StepOne = () => {
         <ReportCard label="Outbuilding:" value="Yes" />
         <ReportCard label="Amount:" value="12" />
       </div>
-<ReportTable/>
-
+      <ReportTable />
+      <hr className="text-[#BDBBBB] my-[10px]" />
+      <button className="bg-[#EBF6FD] font-medium text-[#191E29] p-4 w-full mb-2">
+        Notes
+      </button>
+      <p className="text-sm font-normal text-[#191E29] mb-[62px]">
+        Property Appeared to be well maintained
+      </p>
     </div>
   );
 };
