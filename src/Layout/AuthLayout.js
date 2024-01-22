@@ -13,7 +13,7 @@ const AuthLayout = ({ children }) => {
           </div>
           <div></div>
         </div>
-        <div style={{ overflowY: "scroll" }} className=" left_side  h-full">
+        <div style={{ overflowY: "scroll" }} className="no_scrollbar left_side  h-full">
           {children}
         </div>
       </div>
