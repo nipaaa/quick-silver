@@ -12,7 +12,7 @@ const StepOne = () => {
           <ReportCard label="Street:" value="2374 Highway K" />
           <ReportCard label="City:" value="Hermann" />
 
-          <div className="flex gap-[10px] items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] items-center">
             <ReportCard label="States:" value="MO" />
             <ReportCard label="Date:" value="02/29/2023" />
           </div>

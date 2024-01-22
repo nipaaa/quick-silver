@@ -66,8 +66,8 @@ const ReportTable = () => {
     },
   ];
   return (
-    <div>
-      <table className="fs_14">
+    <div className="overflow-x-scroll no_scrollbar">
+      <table className="fs_14 ">
         <thead>
           <tr className="text-left">
             <th>No</th>
