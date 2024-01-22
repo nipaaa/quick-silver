@@ -23,7 +23,7 @@ const Entries = () => {
               <td>{data.assigned}</td>
               <td>{data.insured} </td>
               <td>{data.address}</td>
-              <td>{data.phone}</td>
+              <td className="whitespace-nowrap">{data.phone}</td>
               <td>{data.status}</td>
             </tr>
           ))}

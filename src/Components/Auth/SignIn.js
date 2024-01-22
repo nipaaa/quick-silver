@@ -54,7 +54,7 @@ const SignIn = () => {
               alt=""
             />
           </div>
-          <div className="flex justify-between mb-5 gap-5 items-center">
+          <div className="flex flex-wrap justify-between mb-5 gap-5 items-center">
             <p className="err_sms">Invalid Username or Password</p>
             <Link href="/forgot-password" className="forgot fs_14">
               Forgot password?
