@@ -510,3 +510,7 @@ span.recharts-legend-item-text {
   font-weight: 600;
   line-height: normal;
 }
+
+.no_scrollbar::-webkit-scrollbar {
+  display: none;
+}

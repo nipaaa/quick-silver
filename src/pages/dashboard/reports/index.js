@@ -1,4 +1,5 @@
 import StepOne from "@/Components/Reports/StepOne";
+import StepThree from "@/Components/Reports/StepThree";
 import StepTwo from "@/Components/Reports/StepTwo";
 import DashboardLayout from "@/Layout/DashboardLayout";
 import React, { useState } from "react";
@@ -21,6 +22,7 @@ const Reports = () => {
       <div className="m-4 lg:mx-[70px] lg:my-[50px]">
         {stepper === 1 && <StepOne />}
         {stepper === 2 && <StepTwo />}
+        {stepper === 3 && <StepThree />}
 
         <div className="flex items-center gap-5 justify-between mb-[71px]">
           <button onClick={handleBack} className="cancel_btn ">

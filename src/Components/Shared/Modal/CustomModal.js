@@ -11,7 +11,7 @@ const CustomModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto no_scrollbar outline-none focus:outline-none">
       {/* Backdrop */}
       <div className="fixed inset-0 bg-black opacity-50"></div>
 

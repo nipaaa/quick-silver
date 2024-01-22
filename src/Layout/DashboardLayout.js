@@ -15,7 +15,7 @@ const DashboardLayout = ({ children }) => {
         <Sidebar showSideBar={showSideBar} handleSidebar={handleSidebar} />
       </div>
 
-      <div style={{ overflowY: "auto" }} className="w-full">
+      <div style={{ overflowY: "auto" }} className="no_scrollbar w-full">
         <Header handleSidebar={handleSidebar} />
         {children}
       </div>

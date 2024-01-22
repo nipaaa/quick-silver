@@ -8,7 +8,7 @@ const Profile = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConPassword, setShowConPassword] = useState(false);
   return (
-    <div className="max-w-[697px] w-full">
+    <div className="max-w-[697px] w-full p-2 m-2">
       <div className="flex flex-col justify-center items-center mb-10">
         <Image src={profile} alt="profile" height={101} width={101} />
         <p className="text-[28px] text-[#191E29] font-bold mb-[10px]">

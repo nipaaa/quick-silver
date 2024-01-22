@@ -2,7 +2,7 @@ import { officeEntries } from "@/Utils/SidebarElement";
 
 const Entries = () => {
   return (
-    <div className="office_entries overflow-x-auto">
+    <div className="office_entries overflow-x-auto no_scrollbar">
       <table className="fs_14">
         <thead>
           <tr className="text-left">

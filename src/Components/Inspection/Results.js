@@ -16,7 +16,7 @@ const Results = () => {
         className="fs-4 mb-4 text-center">
         Results
       </h2>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto no_scrollbar">
         <table className="fs_14">
           <thead>
             <tr className="text-left">

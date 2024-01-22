@@ -64,7 +64,7 @@ const InspectionTab = () => {
   ];
   return (
     <div>
-      <div className="inspection_tab flex flex-wrap items-center gap-8 lg:gap-[70px] border border-b-[#fafdff] pt-[64px] pr-[30px] pl-[30px]">
+      <div className="inspection_tab  overflow-x-auto no_scrollbar flex  items-center gap-8 lg:gap-[70px] border-b border-b-[#fafdff] pt-[64px] pr-[30px] pl-[30px]">
         {tabs.map((data, index) => (
           <div
             onClick={() => setActiveTab(index)}
@@ -72,12 +72,14 @@ const InspectionTab = () => {
             className={`flex gap-1 items-center tab   ${
               activeTab === index && "active"
             }`}
-            key={index}>
+            key={index}
+          >
             <Image
+              className="flex-shrink-0"
               src={activeTab === index ? data.activePic : data.pic}
               alt=""
             />
-            <p>{data.title}</p>
+            <p className="whitespace-nowrap">{data.title}</p>
           </div>
         ))}
       </div>
