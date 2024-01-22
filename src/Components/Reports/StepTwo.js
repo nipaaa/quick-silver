@@ -71,8 +71,8 @@ const StepTwo = () => {
             {details.map((data, index) => (
               <tr key="index">
                 <td>{index + 1}</td>
-                <td>{data.name}</td>
-                <td>{data.size}</td>
+                <td className="whitespace-nowrap">{data.name}</td>
+                <td className="whitespace-nowrap">{data.size}</td>
                 <td>{data?.location}</td>
               </tr>
             ))}
