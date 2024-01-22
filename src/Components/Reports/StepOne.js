@@ -12,7 +12,7 @@ const StepOne = () => {
           <ReportCard label="Street:" value="2374 Highway K" />
           <ReportCard label="City:" value="Hermann" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] items-center">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-[10px] items-center">
             <ReportCard label="States:" value="MO" />
             <ReportCard label="Date:" value="02/29/2023" />
           </div>
@@ -27,7 +27,7 @@ const StepOne = () => {
       </div>
       <hr className="text-[#BDBBBB] my-5" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-[10px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mb-[10px]">
         <ReportCard label="Property Details:" value="Dwelling" />
         <ReportCard label="Yr Built:" value="1954" />
         <ReportCard label="Dwelling Front:" value="SE-Southeast" />
@@ -36,7 +36,7 @@ const StepOne = () => {
         <ReportCard label="Details Roof Addr:" value="Yes" />
         <ReportCard label="Outbuilding Addr:" value="Yes" />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 mb-[10px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mb-[10px]">
         <ReportCard label="Occupied:" value="Yes" />
         <ReportCard label="Homeowner Present:" value="Yes" />
         <ReportCard label="Siding Material:" value="Hardboard" />
