@@ -15,7 +15,7 @@ const Hazards = () => {
     <div>
       <div className="border border-dashed border-[#FF6B0D] p-5 mb-[30px]">
         <p className="font-semibold mb-5">Liabilities & Hazards:</p>
-        <div className="grid grid-cols-4 ">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 ">
           <div className="flex flex-col gap-4">
             {options.map((option, index) => (
               <div key={index} className="flex items-center gap-4">
@@ -25,8 +25,8 @@ const Hazards = () => {
             ))}
           </div>
 
-          <div className="col-span-2">
-            <div className="h-full flex flex-col justify-between">
+          <div className="lg:col-span-2">
+            <div className="h-full flex flex-col gap-4 justify-between">
               <div className="flex items-center gap-4">
                 <label className="mb-0">Comments:</label>
                 <input type="text" placeholder="Pair of German Shepherds" />

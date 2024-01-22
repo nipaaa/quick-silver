@@ -4,10 +4,10 @@ const Actions = () => {
   return (
     <div>
       <div>
-        <button className="text-medium text-[#191E29] bg-[#EBF6FD] p-4 max-w-[268px] w-full mb-[30px]">
+        <button className="text-medium text-[#191E29] bg-[#EBF6FD] p-4 max-w-[268px] w-full mb-4 lg:mb-[30px]">
           Product Inspection Report
         </button>
-        <div className="flex gap-[49px] items-center mb-5">
+        <div className="flex flex-wrap gap-4 lg:gap-[49px] items-center mb-5">
           <button className="text-medium text-[#191E29] bg-[#EBF6FD] p-4 max-w-[268px] w-full">
             SMS Message Insured
           </button>
