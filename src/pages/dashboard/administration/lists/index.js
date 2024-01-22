@@ -1,4 +1,5 @@
-import CustomModal from "@/Components/administration/company/Modal/CustomModal";
+
+import CustomModal from "@/Components/Shared/Modal/CustomModal";
 import DashboardLayout from "@/Layout/DashboardLayout";
 import React, { useState } from "react";
 
