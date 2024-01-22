@@ -8,7 +8,7 @@ const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="signIn">
-      <div className="flex justify-end gap-2 items-center">
+      <div className="flex flex-wrap justify-end gap-2 items-center">
         <p className="dont">Don’t have any account?</p>{" "}
         <Link href="/sign-up" className="signUn_btn text-[20px]">
           Sign Up

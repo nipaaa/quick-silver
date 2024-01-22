@@ -10,7 +10,7 @@ const SignUp = () => {
   return (
     <AuthLayout>
       <div className="signIn">
-        <div className="flex justify-end gap-2 items-center">
+        <div className="flex flex-wrap justify-end gap-2 items-center">
           <p className="dont">Already have any account?</p>{" "}
           <Link href="/" className="signUn_btn text-[20px]">
             Sign In
