@@ -6,7 +6,7 @@ const AuthLayout = ({ children }) => {
   return (
     <div className="auth ">
       <div className="grid lg:grid-cols-2 m-0 h-full">
-        <div className=" right_side lg:flex flex-col items-start justify-between hidden ">
+        <div className=" right_side flex flex-col items-start justify-between  ">
           <img src={logo.src} alt="" />
           <div className="flex justify-center w-full">
             <img className="" src={girl.src} alt="" />
