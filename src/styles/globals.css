@@ -516,7 +516,10 @@ span.recharts-legend-item-text {
 }
 
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:1023px) {
+  .auth {
+    height: unset !important;
+  }
 
   table th,
   table td {
