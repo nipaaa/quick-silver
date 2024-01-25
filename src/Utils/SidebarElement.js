@@ -7,6 +7,8 @@ import report from "../assets/report.png";
 import entity from "../assets/entities.png";
 import company from "../assets/company.png";
 import list from "../assets/list.png";
+import home from "../assets/home-icon.png";
+import car from "../assets/car.png";
 
 export const sidebarElement = [
   {
@@ -65,6 +67,7 @@ export const sidebarElement = [
 export const officeEntries = [
   {
     entryDate: "10/29/2023",
+    type: home,
     dueDate: "11/3/2023",
     assigned: "Unassigned",
     insured: "Jason Mead",
@@ -74,6 +77,7 @@ export const officeEntries = [
   },
   {
     entryDate: "10/29/2023",
+    type: car,
     dueDate: "11/3/2023",
     assigned: "Unassigned",
     insured: "Miranda Williams",
@@ -83,6 +87,7 @@ export const officeEntries = [
   },
   {
     entryDate: "10/29/2023",
+    type: home,
     dueDate: "11/3/2023",
     assigned: "Unassigned",
     insured: "Ralph Jacobs",
@@ -92,6 +97,7 @@ export const officeEntries = [
   },
   {
     entryDate: "10/29/2023",
+    type: car,
     dueDate: "11/3/2023",
     assigned: "Unassigned",
     insured: "George Matson",
@@ -101,6 +107,7 @@ export const officeEntries = [
   },
   {
     entryDate: "10/29/2023",
+    type: home,
     dueDate: "11/3/2023",
     assigned: "Unassigned",
     insured: "Pam Sparks",
@@ -113,6 +120,7 @@ export const officeEntries = [
 export const inspectionResult = [
   {
     insured: "James Smith",
+    type: home,
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 4,
@@ -121,6 +129,7 @@ export const inspectionResult = [
   },
   {
     insured: "Margle Masin",
+    type: car,
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 3,
@@ -129,6 +138,7 @@ export const inspectionResult = [
   },
   {
     insured: "Ralph Jacobs",
+    type: home,
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 2,
@@ -137,6 +147,7 @@ export const inspectionResult = [
   },
   {
     insured: "George Matson",
+    type: car,
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 0,
@@ -145,6 +156,7 @@ export const inspectionResult = [
   },
   {
     insured: "Pam Sparks",
+    type: home,
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 1,

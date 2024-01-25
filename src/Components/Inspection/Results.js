@@ -3,8 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const Results = () => {
-
-  const Router = useRouter()
+  const Router = useRouter();
   const handleNavigate = () => {
     Router.push("/dashboard/edit-inspection");
   };
@@ -13,7 +12,8 @@ const Results = () => {
     <div className="o">
       <h2
         style={{ color: "#191E29", fontWeight: "600" }}
-        className="fs-4 mb-4 text-center">
+        className="fs-4 mb-4 text-center"
+      >
         Results
       </h2>
       <div className="overflow-x-auto no_scrollbar">
@@ -21,6 +21,7 @@ const Results = () => {
           <thead>
             <tr className="text-left">
               <th>Insured </th>
+              <th>Type </th>
               <th>Assigned To</th>
               <th>Due Date</th>
               <th className="text-center">Status Updates</th>
@@ -30,11 +31,16 @@ const Results = () => {
           </thead>
           <tbody>
             {inspectionResult.map((data, index) => (
-              <tr key={index}>
+              <tr
+                onClick={handleNavigate}
+                className="cursor-pointer"
+                key={index}
+              >
                 <td style={{ color: "#FF6B0D" }}>
-                  <p onClick={handleNavigate} className="cursor-pointer">
-                  {data.insured}
-                  </p>
+                  <p>{data.insured}</p>
+                </td>
+                <td>
+                  <img src={data.type.src} alt="" />
                 </td>
                 <td>{data.assigned}</td>
                 <td>{data.DueDate}</td>
