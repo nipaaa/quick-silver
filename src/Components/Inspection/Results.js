@@ -1,15 +1,20 @@
 import { inspectionResult } from "@/Utils/SidebarElement";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useContext } from "react";
+import home from "../../assets/home-icon.png";
+import car from "../../assets/car.png";
+import { TypeContext } from "@/Context/TypeProvider";
 
 const Results = () => {
+  const { setType } = useContext(TypeContext);
   const Router = useRouter();
-  const handleNavigate = () => {
+  const handleNavigate = (type) => {
+    setType(type);
     Router.push("/dashboard/edit-inspection");
   };
 
   return (
-    <div className="o">
+    <div>
       <h2
         style={{ color: "#191E29", fontWeight: "600" }}
         className="fs-4 mb-4 text-center"
@@ -32,7 +37,7 @@ const Results = () => {
           <tbody>
             {inspectionResult.map((data, index) => (
               <tr
-                onClick={handleNavigate}
+                onClick={() => handleNavigate(data.type)}
                 className="cursor-pointer"
                 key={index}
               >
@@ -40,7 +45,10 @@ const Results = () => {
                   <p>{data.insured}</p>
                 </td>
                 <td>
-                  <img src={data.type.src} alt="" />
+                  <img
+                    src={data.type === "property" ? home.src : car.src}
+                    alt=""
+                  />
                 </td>
                 <td>{data.assigned}</td>
                 <td>{data.DueDate}</td>

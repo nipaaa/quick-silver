@@ -120,7 +120,7 @@ export const officeEntries = [
 export const inspectionResult = [
   {
     insured: "James Smith",
-    type: home,
+    type: "property",
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 4,
@@ -129,7 +129,7 @@ export const inspectionResult = [
   },
   {
     insured: "Margle Masin",
-    type: car,
+    type: "automobile",
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 3,
@@ -138,7 +138,7 @@ export const inspectionResult = [
   },
   {
     insured: "Ralph Jacobs",
-    type: home,
+    type: "property",
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 2,
@@ -147,7 +147,7 @@ export const inspectionResult = [
   },
   {
     insured: "George Matson",
-    type: car,
+    type: "automobile",
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 0,
@@ -156,7 +156,7 @@ export const inspectionResult = [
   },
   {
     insured: "Pam Sparks",
-    type: home,
+    type: "property",
     assigned: "Jake Mangrove",
     DueDate: "11/3/2023",
     statusUpdate: 1,
