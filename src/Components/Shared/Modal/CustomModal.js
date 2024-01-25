@@ -12,22 +12,15 @@ const CustomModal = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto no_scrollbar outline-none focus:outline-none">
-      {/* Backdrop */}
       <div className="fixed inset-0 bg-black opacity-50"></div>
-
-      {/* Modal content */}
       <div className="relative max-w-[1004px] w-full  mx-auto my-6">
-        {/* Modal body */}
         <div className="relative flex flex-col  bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none py-[56px]">
-          {/* Header */}
           <h3 className="text-[28px] font-[700] text-center">
             {title ? title : ""}
           </h3>
-
           <div className="relative py-[38px] flex justify-center ">
             {children}
           </div>
-          {/* Footer */}
           <div className="flex items-center justify-center gap-[20px]">
             <button
               className="cancel_btn w-[140px]"
@@ -37,7 +30,7 @@ const CustomModal = ({
               Cancel
             </button>
             <button
-              className="search_btn w-[140px]"
+              className="search_btn min-w-[140px]"
               type="button"
               onClick={onSave}
             >

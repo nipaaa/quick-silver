@@ -12,9 +12,11 @@ import outbuildingActive from "../../assets/outbuilding-active.png";
 import outbuilding from "../../assets/outbuilding.png";
 import propertyActive from "../../assets/property-active.png";
 import property from "../../assets/property.png";
+import automobile from "../../assets/automobile.png";
+import automobileActive from "../../assets/automobile-active.png";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Actions from "./Actions";
 import Attachments from "./Attachments";
 import Hazards from "./Hazards";
@@ -22,61 +24,82 @@ import HistoryLog from "./HistoryLog";
 import Insured from "./Insured";
 import OutBuildings from "./OutBuildings";
 import Property from "./Property";
+import Automobile from "./Automobile";
+import { TypeContext } from "@/Context/TypeProvider";
 
 const InspectionTab = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const { type } = useContext(TypeContext);
+  const [activeTab, setActiveTab] = useState("Insured");
   const tabs = [
     {
       pic: insured,
       activePic: insuredActive,
       title: "Insured",
+      type: "all",
+    },
+    {
+      pic: automobile,
+      activePic: automobileActive,
+      title: "Automobile",
+      type: "automobile",
     },
     {
       pic: property,
       activePic: propertyActive,
       title: "Property",
+      type: "property",
     },
     {
       pic: hazard,
       activePic: hazardActive,
       title: "Hazards",
+      type: "property",
     },
     {
       pic: outbuilding,
       activePic: outbuildingActive,
       title: "Outbuildings",
+      type: "property",
     },
     {
       pic: attachment,
       activePic: attachmentActive,
       title: "Attachments",
+      type: "all",
     },
     {
       pic: action,
       activePic: actionActive,
       title: "Actions",
+      type: "all",
     },
     {
       pic: history,
       activePic: historyActive,
       title: "History Logs",
+      type: "all",
     },
   ];
+
+  const filteredTabs = tabs.filter(
+    (data) => data.type === "all" || data.type === type
+  );
+
   return (
     <div>
       <div className="inspection_tab  overflow-x-auto no_scrollbar flex  items-center gap-8 lg:gap-[70px] border-b border-b-[#fafdff] pt-[64px] pr-[30px] pl-[30px]">
-        {tabs.map((data, index) => (
+        {filteredTabs.map((data, index) => (
           <div
-            onClick={() => setActiveTab(index)}
+            onClick={() => setActiveTab(data.title)}
             style={{ cursor: "pointer" }}
             className={`flex gap-1 items-center tab   ${
-              activeTab === index && "active"
+              activeTab === data.title && "active"
             }`}
             key={index}
           >
             <Image
               className="flex-shrink-0"
-              src={activeTab === index ? data.activePic : data.pic}
+              src={activeTab === data.title ? data.activePic : data.pic}
               alt=""
             />
             <p className="whitespace-nowrap">{data.title}</p>
@@ -85,13 +108,14 @@ const InspectionTab = () => {
       </div>
 
       <div className="inspection_body">
-        {activeTab === 0 && <Insured />}
-        {activeTab === 1 && <Property />}
-        {activeTab === 2 && <Hazards />}
-        {activeTab === 3 && <OutBuildings />}
-        {activeTab === 4 && <Attachments />}
-        {activeTab === 5 && <Actions />}
-        {activeTab === 6 && <HistoryLog />}
+        {activeTab === "Insured" && <Insured />}
+        {activeTab === "Automobile" && <Automobile />}
+        {activeTab === "Property" && <Property />}
+        {activeTab === "Hazards" && <Hazards />}
+        {activeTab === "Outbuildings" && <OutBuildings />}
+        {activeTab === "Attachments" && <Attachments />}
+        {activeTab === "Actions" && <Actions />}
+        {activeTab === "History Logs" && <HistoryLog />}
       </div>
     </div>
   );

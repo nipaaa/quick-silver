@@ -7,6 +7,7 @@ const Entries = () => {
         <thead>
           <tr className="text-left whitespace-nowrap">
             <th>Entry Date</th>
+            <th>Type </th>
             <th>Due Date</th>
             <th>Assigned To</th>
             <th>Insured</th>
@@ -19,6 +20,9 @@ const Entries = () => {
           {officeEntries.map((data, index) => (
             <tr key={index}>
               <td className="dot">{data.entryDate}</td>
+              <td>
+                <img src={data.type.src} alt="" />
+              </td>
               <td>{data.dueDate}</td>
               <td>{data.assigned}</td>
               <td>{data.insured} </td>

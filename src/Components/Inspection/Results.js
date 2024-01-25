@@ -1,19 +1,24 @@
 import { inspectionResult } from "@/Utils/SidebarElement";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useContext } from "react";
+import home from "../../assets/home-icon.png";
+import car from "../../assets/car.png";
+import { TypeContext } from "@/Context/TypeProvider";
 
 const Results = () => {
-
-  const Router = useRouter()
-  const handleNavigate = () => {
+  const { setType } = useContext(TypeContext);
+  const Router = useRouter();
+  const handleNavigate = (type) => {
+    setType(type);
     Router.push("/dashboard/edit-inspection");
   };
 
   return (
-    <div className="o">
+    <div>
       <h2
         style={{ color: "#191E29", fontWeight: "600" }}
-        className="fs-4 mb-4 text-center">
+        className="fs-4 mb-4 text-center"
+      >
         Results
       </h2>
       <div className="overflow-x-auto no_scrollbar">
@@ -21,6 +26,7 @@ const Results = () => {
           <thead>
             <tr className="text-left">
               <th>Insured </th>
+              <th>Type </th>
               <th>Assigned To</th>
               <th>Due Date</th>
               <th className="text-center">Status Updates</th>
@@ -30,11 +36,19 @@ const Results = () => {
           </thead>
           <tbody>
             {inspectionResult.map((data, index) => (
-              <tr key={index}>
+              <tr
+                onClick={() => handleNavigate(data.type)}
+                className="cursor-pointer"
+                key={index}
+              >
                 <td style={{ color: "#FF6B0D" }}>
-                  <p onClick={handleNavigate} className="cursor-pointer">
-                  {data.insured}
-                  </p>
+                  <p>{data.insured}</p>
+                </td>
+                <td>
+                  <img
+                    src={data.type === "property" ? home.src : car.src}
+                    alt=""
+                  />
                 </td>
                 <td>{data.assigned}</td>
                 <td>{data.DueDate}</td>
