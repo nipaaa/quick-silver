@@ -30,7 +30,7 @@ const CustomModal = ({
               Cancel
             </button>
             <button
-              className="search_btn w-[140px]"
+              className="search_btn min-w-[140px]"
               type="button"
               onClick={onSave}
             >
