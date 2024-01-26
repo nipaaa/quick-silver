@@ -1,29 +1,54 @@
-import React from "react";
-import attachment from "../../../assets/attachment-add.png";
+import React, { useRef, useState } from "react";
+import pic from "../../../assets/attachment-add.png";
 
 const AttachmentAdd = ({ onSave, onClose }) => {
+  const fileRef = useRef();
+  const [attachment, setAttachment] = useState({ src: null });
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        setAttachment({ src: event.target.result });
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-12">
       <div>
         <img
           className="w-full rounded-lg mb-[30px]"
-          src={attachment.src}
+          src={attachment.src ? attachment.src : pic.src}
           alt=""
         />
 
         <div className=" flex gap-5 justify-center text-[#FF6B0D]  font-semibold">
+          <input
+            className="hidden"
+            onChange={handleFileChange}
+            ref={fileRef}
+            type="file"
+          />
           <button
+            onClick={() => fileRef.current.click()}
             className="rounded-[12px] p-4 w-[140px]"
             style={{ border: "1px solid #FF6B0D" }}
           >
             Upload
           </button>
-          <button
-            className="rounded-[12px] p-4 w-[140px]"
+          <a
+            href={attachment.src}
+            download
+            className="rounded-[12px] p-4 w-[140px] text-center"
             style={{ border: "1px solid #FF6B0D" }}
           >
             Download
-          </button>
+          </a>
         </div>
       </div>
       <div>
