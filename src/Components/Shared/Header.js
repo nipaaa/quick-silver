@@ -122,6 +122,7 @@ const Header = ({ handleSidebar }) => {
         onClose={closeModal}
         submitTitle={"Save"}
         onSave={closeModal}
+        buttons={true}
       >
         <Profile />
       </CustomModal>

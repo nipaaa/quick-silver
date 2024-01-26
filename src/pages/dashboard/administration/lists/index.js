@@ -170,6 +170,7 @@ const CompanyLists = () => {
         title={"Add / Edit List Item"}
         submitTitle={"Send Invitation"}
         onSave={handleReferCompany}
+        buttons={true}
       >
         <EditList />
       </CustomModal>

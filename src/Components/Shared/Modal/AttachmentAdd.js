@@ -1,7 +1,7 @@
 import React from "react";
 import attachment from "../../../assets/attachment-add.png";
 
-const AttachmentAdd = () => {
+const AttachmentAdd = ({ onSave, onClose }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-12">
       <div>
@@ -64,12 +64,29 @@ const AttachmentAdd = () => {
             />
           </div>
         </div>
-        <div className="border border-[#EEE] p-5 ">
+        <div className="border border-[#EEE] p-5 mb-[30px] ">
           <p className="text-[#191E29] font-normal ">
             <span className="text-[#FF6B0D]">Notes:</span> Please see reference
             pictures for locations. Lorem Lorem Lorem Ipsum Lorem Lorem Ipsum
             Lorem Lorem.
           </p>
+        </div>
+
+        <div className="flex items-center justify-end gap-[20px]">
+          <button
+            className="cancel_btn w-[140px]"
+            type="button"
+            onClick={onClose}
+          >
+            Cancel
+          </button>
+          <button
+            className="search_btn min-w-[140px]"
+            type="button"
+            onClick={onSave}
+          >
+            Save
+          </button>
         </div>
       </div>
     </div>

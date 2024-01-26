@@ -7,6 +7,7 @@ const CustomModal = ({
   title,
   submitTitle,
   onSave,
+  buttons,
 }) => {
   if (!isOpen) return null;
 
@@ -21,22 +22,24 @@ const CustomModal = ({
           <div className="relative py-[38px] flex justify-center ">
             {children}
           </div>
-          <div className="flex items-center justify-center gap-[20px]">
-            <button
-              className="cancel_btn w-[140px]"
-              type="button"
-              onClick={onClose}
-            >
-              Cancel
-            </button>
-            <button
-              className="search_btn min-w-[140px]"
-              type="button"
-              onClick={onSave}
-            >
-              {submitTitle}
-            </button>
-          </div>
+          {buttons && (
+            <div className="flex items-center justify-center gap-[20px]">
+              <button
+                className="cancel_btn w-[140px]"
+                type="button"
+                onClick={onClose}
+              >
+                Cancel
+              </button>
+              <button
+                className="search_btn min-w-[140px]"
+                type="button"
+                onClick={onSave}
+              >
+                {submitTitle}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

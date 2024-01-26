@@ -100,12 +100,12 @@ const NewInspectionTab = () => {
 
       <CustomModal
         isOpen={modalOpen}
+        cancel={false}
         onClose={closeModal}
-        submitTitle={"Select"}
         title="Select Type"
-        onSave={closeModal}
+        buttons={false}
       >
-        <SelectType />
+        <SelectType onSave={closeModal} />
       </CustomModal>
     </div>
   );

@@ -108,6 +108,7 @@ const OutBuildings = () => {
         submitTitle={"Save"}
         title="Add / Edit Outbuilding"
         onSave={closeModal}
+        buttons={true}
       >
         <OutBuildingAddNew />
       </CustomModal>
