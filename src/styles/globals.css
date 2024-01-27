@@ -305,6 +305,17 @@ table td.dot::before {
   color: #fff;
   font-weight: 700;
   padding: 11px 32px;
+  transition: 0.3s ease-in;
+  border: 1px solid transparent;
+}
+
+.signIn .signUn_btn:hover {
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #1e4c5a;
+  color: #1e4c5a;
+  font-weight: 700;
+  padding: 11px 32px;
 }
 
 .signIn h2 {
@@ -347,11 +358,23 @@ label span {
 
 .signIn .signIn_btn {
   border-radius: 3px;
-  background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color,
-      #1e4c5a);
+  background:
+    #1e4c5a;
   width: 100%;
   padding: 20px;
   color: #fff;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: 0.3s ease-in;
+}
+
+.signIn .signIn_btn:hover {
+  border-radius: 3px;
+  background: transparent;
+  border: 1px solid #1e4c5a;
+  width: 100%;
+  padding: 20px;
+  color: #1e4c5a;
   font-weight: 700;
 }
 
@@ -435,10 +458,19 @@ span.recharts-legend-item-text {
   border-radius: 10px;
   background: var(--secondary-color-2nd-secondary-color-2nd-secondary-color,
       #1e4c5a);
+  border: 1px solid transparent;
   color: #fff;
   font-weight: 600;
   padding: 16px 46px;
   margin-bottom: 30px;
+  transition: 0.3s ease-in;
+
+}
+
+.search_form button:hover {
+  border: 1px solid #1e4c5a;
+  background: transparent;
+  color: #1e4c5a;
 }
 
 
@@ -480,6 +512,13 @@ span.recharts-legend-item-text {
   color: var(--primary-1st-primary-color-primary-color, #191e29);
   font-weight: 600;
   padding: 17px 46px;
+  transition: 0.3s ease-in;
+  border: 1px solid transparent;
+}
+
+.cancel_btn:hover {
+  background: white;
+  border: 1px solid #191e29;
 }
 
 .search_btn {
@@ -489,6 +528,15 @@ span.recharts-legend-item-text {
   color: #fff;
   font-weight: 600;
   padding: 16px 32px;
+  border: 1px solid transparent;
+  transition: 0.3s ease-in;
+}
+
+.search_btn:hover {
+  border: 1px solid #1e4c5a;
+  background: transparent;
+  color: #1e4c5a;
+
 }
 
 .inputField {
