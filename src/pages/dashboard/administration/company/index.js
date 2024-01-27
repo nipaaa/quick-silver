@@ -61,6 +61,7 @@ const CompanyPage = () => {
         title={"Refer New Company"}
         submitTitle={"Send Referral"}
         onSave={handleReferCompany}
+        buttons={true}
       >
         <div className="mx-auto">
           <div className="flex gap-[20px]">
@@ -120,6 +121,7 @@ const CompanyPage = () => {
         title={"Invite user"}
         submitTitle={"Send Invitation"}
         onSave={handleInviteUser}
+        buttons={true}
       >
         <div className="mx-auto">
           <div className="flex gap-[20px]">

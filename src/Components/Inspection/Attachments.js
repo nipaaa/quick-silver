@@ -90,12 +90,10 @@ const Attachments = () => {
       </div>
       <CustomModal
         isOpen={modalOpen}
-        onClose={closeModal}
-        submitTitle={"Save"}
         title="Image Upload / Edit"
-        onSave={closeModal}
+        buttons={false}
       >
-        <AttachmentAdd />
+        <AttachmentAdd onSave={closeModal} onClose={closeModal} />
       </CustomModal>
     </div>
   );

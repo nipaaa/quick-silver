@@ -1,29 +1,54 @@
-import React from "react";
-import attachment from "../../../assets/attachment-add.png";
+import React, { useRef, useState } from "react";
+import pic from "../../../assets/attachment-add.png";
 
-const AttachmentAdd = () => {
+const AttachmentAdd = ({ onSave, onClose }) => {
+  const fileRef = useRef();
+  const [attachment, setAttachment] = useState({ src: null });
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        setAttachment({ src: event.target.result });
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-12">
       <div>
         <img
           className="w-full rounded-lg mb-[30px]"
-          src={attachment.src}
+          src={attachment.src ? attachment.src : pic.src}
           alt=""
         />
 
         <div className=" flex gap-5 justify-center text-[#FF6B0D]  font-semibold">
+          <input
+            className="hidden"
+            onChange={handleFileChange}
+            ref={fileRef}
+            type="file"
+          />
           <button
+            onClick={() => fileRef.current.click()}
             className="rounded-[12px] p-4 w-[140px]"
             style={{ border: "1px solid #FF6B0D" }}
           >
             Upload
           </button>
-          <button
-            className="rounded-[12px] p-4 w-[140px]"
+          <a
+            href={attachment.src}
+            download
+            className="rounded-[12px] p-4 w-[140px] text-center"
             style={{ border: "1px solid #FF6B0D" }}
           >
             Download
-          </button>
+          </a>
         </div>
       </div>
       <div>
@@ -64,12 +89,29 @@ const AttachmentAdd = () => {
             />
           </div>
         </div>
-        <div className="border border-[#EEE] p-5 ">
+        <div className="border border-[#EEE] p-5 mb-[30px] ">
           <p className="text-[#191E29] font-normal ">
             <span className="text-[#FF6B0D]">Notes:</span> Please see reference
             pictures for locations. Lorem Lorem Lorem Ipsum Lorem Lorem Ipsum
             Lorem Lorem.
           </p>
+        </div>
+
+        <div className="flex items-center justify-end gap-[20px]">
+          <button
+            className="cancel_btn w-[140px]"
+            type="button"
+            onClick={onClose}
+          >
+            Cancel
+          </button>
+          <button
+            className="search_btn min-w-[140px]"
+            type="button"
+            onClick={onSave}
+          >
+            Save
+          </button>
         </div>
       </div>
     </div>
