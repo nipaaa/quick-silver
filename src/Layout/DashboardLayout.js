@@ -1,5 +1,6 @@
 import Header from "@/Components/Shared/Header";
 import Sidebar from "@/Components/Sidebar";
+import PrivateRoutes from "@/privateRoutes/PrivateRoutes";
 import { useState } from "react";
 
 const DashboardLayout = ({ children }) => {
@@ -10,6 +11,7 @@ const DashboardLayout = ({ children }) => {
   };
 
   return (
+    // <PrivateRoutes>
     <div className="h-screen flex">
       <div className="flex-shrink-0">
         <Sidebar showSideBar={showSideBar} handleSidebar={handleSidebar} />
@@ -20,6 +22,7 @@ const DashboardLayout = ({ children }) => {
         {children}
       </div>
     </div>
+    // </PrivateRoutes>
   );
 };
 

@@ -3,10 +3,21 @@ import AuthLayout from "../../Layout/AuthLayout";
 import eyeOff from "../../assets/eye-off.png";
 import eye from "../../assets/eye.png";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
-const Reset = () => {
+const Reset = ({ updatePassword, isLoading }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConPassword, setShowConPassword] = useState(false);
+  const { query } = useRouter();
+
+  console.log(query?.user, "ggg");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const password = e.target.password.value;
+    const confirmPassword = e.target.confirmPassword.value;
+  };
+
   return (
     <AuthLayout>
       <div className="signIn">
@@ -16,7 +27,7 @@ const Reset = () => {
             Sign In
           </Link>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2 className="text-[32px]">Reset Password</h2>
           <p className=" subtitle">
             Enter a new Password and Confirm to reset your password
@@ -43,21 +54,21 @@ const Reset = () => {
                   cursor: "pointer",
                 }}
                 className="absolute "
-                src={showPassword ? eye : eyeOff}
+                src={showPassword ? eye.src : eyeOff.src}
                 alt=""
               />
             </div>
           </div>
           <div className="mb-5">
-            <label htmlFor="password">
+            <label htmlFor="confirmPassword">
               <span>*</span> Confirm Password
             </label>
             <div className="relative">
               <input
                 className="mb-2 p-5 h-[unset]"
                 type={showConPassword ? "text" : "password"}
-                name="password"
-                id="password"
+                name="confirmPassword"
+                id="confirmPassword"
                 placeholder="Confirm your password"
               />
               <img
@@ -69,7 +80,7 @@ const Reset = () => {
                   cursor: "pointer",
                 }}
                 className="absolute "
-                src={showConPassword ? eye : eyeOff}
+                src={showConPassword ? eye.src : eyeOff.src}
                 alt=""
               />
             </div>
