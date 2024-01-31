@@ -9,6 +9,9 @@ import signOut from "../../assets/sign-out.png";
 import CustomModal from "./Modal/CustomModal";
 import Profile from "./Modal/Profile";
 import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+import { userLoggedOut } from "@/features/auth/authSlice";
+import Cookies from "js-cookie";
 
 const Header = ({ handleSidebar }) => {
   const profileRef = useRef();
@@ -17,8 +20,21 @@ const Header = ({ handleSidebar }) => {
   const [show, setShow] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
+  const { user } = useSelector((state) => state.auth);
+
+  console.log(user, "user");
+
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+
+  const dispatch = useDispatch();
+
+  const hanldeSignOut = () => {
+    dispatch(userLoggedOut());
+
+    Cookies.remove("quickSilverAuth");
+    router.push("/");
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -72,7 +88,9 @@ const Header = ({ handleSidebar }) => {
               src={profile.src}
               alt=""
             />
-            <p className="name">John Doe</p>
+            <p className="name text-nowrap">
+              {user?.firstName} {user?.lastName}
+            </p>
             <img src={arrow.src} alt="" />
           </div>
 
@@ -91,25 +109,30 @@ const Header = ({ handleSidebar }) => {
                 />
                 <div>
                   <div onClick={openModal} className={"cursor-pointer"}>
-                    <p className="name ">John Doe</p>
-                    <p className="email ">john.doe@gmail.com</p>
+                    <p className="name ">
+                      {user?.firstName} {user?.lastName}
+                    </p>
+                    <p className="email ">{user?.email}</p>
                   </div>
-                  <Link
+                  <a
                     style={{ display: "flex" }}
                     className="  items-center gap-3 "
                     href="#"
+                    onClick={openModal}
                   >
                     <img src={manage.src} alt="" />
                     Manage account
-                  </Link>
-                  <Link
-                    style={{ display: "flex" }}
-                    className="  items-center gap-3"
-                    href="#"
-                  >
-                    <img src={signOut.src} alt="" />
-                    Sign Out
-                  </Link>
+                  </a>
+                  <button onClick={hanldeSignOut}>
+                    <a
+                      style={{ display: "flex" }}
+                      className="  items-center gap-3"
+                      href="#"
+                    >
+                      <img src={signOut.src} alt="" />
+                      Sign Out
+                    </a>
+                  </button>
                 </div>
               </div>
               <img src={dot.src} alt="" />
