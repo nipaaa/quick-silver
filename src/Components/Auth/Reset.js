@@ -4,18 +4,78 @@ import eyeOff from "../../assets/eye-off.png";
 import eye from "../../assets/eye.png";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
+import { useUpdatePasswordMutation } from "@/features/auth/authApi";
 
 const Reset = ({ updatePassword, isLoading }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConPassword, setShowConPassword] = useState(false);
-  const { query } = useRouter();
+  const { query, push } = useRouter();
 
   console.log(query?.user, "ggg");
+
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword.value;
+
+    if (!passwordRegex.test(password)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must contain at least one uppercase, one lowercase, one special character, one digit and it should be at least 8 characters long.",
+      });
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password doesn't matched!",
+      });
+      return;
+    }
+
+    try {
+      const data = {
+        id: query?.user,
+        password,
+      };
+      const res = await updatePassword(data);
+
+      if (res?.error?.error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${res?.error?.error}`,
+        });
+      }
+      if (res?.error?.data?.message) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${res?.error?.data?.message}`,
+        });
+      }
+      if (res?.data?.success) {
+        push("/");
+        Swal.fire({
+          icon: "success",
+          title: "Successfull!",
+          text: `${res?.data?.message}`,
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${error?.message}`,
+      });
+    }
   };
 
   return (
