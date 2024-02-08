@@ -88,6 +88,9 @@ export const authAPi = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    getFieldAdjuster: builder.query({
+      query: (id) => `/api/user/getFieldAduster/${id}`,
+    }),
   }),
 });
 
@@ -98,4 +101,5 @@ export const {
   useSendResetPasswordLinkMutation,
   useResendEmailVerifictionCodeMutation,
   useUpdatePasswordMutation,
+  useGetFieldAdjusterQuery,
 } = authAPi;

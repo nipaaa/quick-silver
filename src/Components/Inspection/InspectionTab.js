@@ -25,10 +25,11 @@ import Insured from "./Insured";
 import OutBuildings from "./OutBuildings";
 import Property from "./Property";
 import Automobile from "./Automobile";
-import { TypeContext } from "@/Context/TypeProvider";
+
+import { useSelector } from "react-redux";
 
 const InspectionTab = () => {
-  const { type } = useContext(TypeContext);
+  const { type } = useSelector((state) => state.inspection);
   const [activeTab, setActiveTab] = useState("Insured");
   const tabs = [
     {

@@ -3,13 +3,16 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import home from "../../assets/home-icon.png";
 import car from "../../assets/car.png";
-import { TypeContext } from "@/Context/TypeProvider";
+
+import { useDispatch } from "react-redux";
+import { setType } from "@/features/Inspection/inspectionSlice";
 
 const Results = () => {
-  const { setType } = useContext(TypeContext);
+  const dispatch = useDispatch();
   const Router = useRouter();
   const handleNavigate = (type) => {
     setType(type);
+    dispatch(setType(type));
     Router.push("/dashboard/edit-inspection");
   };
 

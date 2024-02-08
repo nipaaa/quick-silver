@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const SignIn = ({ isLoading, login }) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  console.log(isLoading, "ffkfjkf");
+  // console.log(isLoading, "ffkfjkf");
   const { push } = useRouter();
 
   const handleSubmit = async (e) => {

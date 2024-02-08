@@ -33,7 +33,7 @@ const Header = ({ handleSidebar }) => {
     dispatch(userLoggedOut());
 
     Cookies.remove("quickSilverAuth");
-    router.push("/");
+    router.push("/sign-in");
   };
 
   useEffect(() => {
@@ -127,7 +127,6 @@ const Header = ({ handleSidebar }) => {
                     <a
                       style={{ display: "flex" }}
                       className="  items-center gap-3"
-                      href="#"
                     >
                       <img src={signOut.src} alt="" />
                       Sign Out

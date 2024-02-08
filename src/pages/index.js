@@ -1,13 +1,17 @@
-import AuthLayout from "@/Layout/AuthLayout";
-
-import SignIn from "@/Components/Auth/SignIn";
-import { useLoginMutation } from "@/features/auth/authApi";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export default function Home() {
-  const [login, { isLoading }] = useLoginMutation();
-  return (
-    <AuthLayout>
-      <SignIn login={login} isLoading={isLoading} />
-    </AuthLayout>
-  );
+  const { user } = useSelector((state) => state.auth);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (user) {
+      router.push("/dashboard");
+    } else {
+      router.push("/sign-in");
+    }
+  }, [user]);
+  return <div></div>;
 }
