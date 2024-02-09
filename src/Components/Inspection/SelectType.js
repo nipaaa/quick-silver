@@ -1,12 +1,14 @@
-import { TypeContext } from "@/Context/TypeProvider";
+import { setType } from "@/features/Inspection/inspectionSlice";
 import React, { useContext } from "react";
+import { useDispatch } from "react-redux";
 
 const SelectType = ({ onSave }) => {
-  const { setType } = useContext(TypeContext);
+  const dispatch = useDispatch();
 
   const handleTypeChange = (event) => {
     const selectedType = event.target.value;
-    setType(selectedType);
+
+    dispatch(setType(selectedType));
   };
 
   return (
@@ -15,8 +17,8 @@ const SelectType = ({ onSave }) => {
         onChange={handleTypeChange}
         className="max-w-[425px]  h-[55px] mb-[30px]"
       >
-        <option value="property">Property</option>
-        <option value="automobile">Automobile</option>
+        <option value="Property">Property</option>
+        <option value="Automobile">Automobile</option>
       </select>
       <br />
       <button

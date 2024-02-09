@@ -12,13 +12,14 @@ import NewInsured from "./NewInsured";
 import NewProperty from "./NewProperty";
 import CustomModal from "../Shared/Modal/CustomModal";
 import SelectType from "./SelectType";
-import { TypeContext } from "@/Context/TypeProvider";
+
 import NewAutomobile from "./NewAutomobile";
+import { useSelector } from "react-redux";
 
 const NewInspectionTab = () => {
   const [activeTab, setActiveTab] = useState("Insured");
   const [modalOpen, setModalOpen] = useState(false);
-  const { type } = useContext(TypeContext);
+  const { type } = useSelector((state) => state.inspection);
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
@@ -33,13 +34,13 @@ const NewInspectionTab = () => {
       pic: property,
       activePic: propertyActive,
       title: "Property",
-      condition: type === "property",
+      condition: type === "Property",
     },
     {
       pic: automobile,
       activePic: automobileActive,
       title: "Automobile",
-      condition: type === "automobile",
+      condition: type === "Automobile",
     },
   ];
 
@@ -47,7 +48,6 @@ const NewInspectionTab = () => {
     openModal();
   }, []);
 
-  console.log(activeTab, "active");
   return (
     <div>
       <div className="flex gap-[10px] items-center mt-[45px] ml-[30px]">
@@ -59,7 +59,7 @@ const NewInspectionTab = () => {
           data.condition !== undefined ? (
             data.condition ? (
               <div
-                onClick={() => setActiveTab(data.title)}
+                // onClick={() => setActiveTab(data.title)}
                 style={{ cursor: "pointer" }}
                 className={`flex gap-1 items-center tab ${
                   activeTab === data.title && "active"
@@ -75,7 +75,7 @@ const NewInspectionTab = () => {
             ) : null
           ) : (
             <div
-              onClick={() => setActiveTab(data.title)}
+              // onClick={() => setActiveTab(data.title)}
               style={{ cursor: "pointer" }}
               className={`flex gap-1 items-center tab ${
                 activeTab === data.title && "active"
@@ -93,7 +93,7 @@ const NewInspectionTab = () => {
       </div>
 
       <div className="inspection_body ">
-        {activeTab === "Insured" && <NewInsured />}
+        {activeTab === "Insured" && <NewInsured setActiveTab={setActiveTab} />}
         {activeTab === "Property" && <NewProperty />}
         {activeTab === "Automobile" && <NewAutomobile />}
       </div>

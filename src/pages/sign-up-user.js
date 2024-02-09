@@ -1,100 +1,12 @@
-import React, { useState } from "react";
-import eyeOff from "../../assets/eye-off.png";
-import eye from "../../assets/eye.png";
 import AuthLayout from "@/Layout/AuthLayout";
 import Link from "next/link";
-import Swal from "sweetalert2";
-import { useRegisterMutation } from "@/features/auth/authApi";
-import { useRouter } from "next/router";
+import React, { useState } from "react";
+import eyeOff from "@/assets/eye-off.png";
+import eye from "@/assets/eye.png";
 
-const SignUp = () => {
+const SignUpUserPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConPassword, setShowConPassword] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(false);
-
-  const [register, { isLoading: registering }] = useRegisterMutation();
-
-  const { push } = useRouter();
-
-  const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/;
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setIsLoading(true);
-
-    const form = e.target;
-
-    const referralId = form.referralId.value;
-    const firstName = form.firstName.value;
-    const lastName = form.lastName.value;
-    const companyName = form.companyName.value;
-    const phoneNumber = form.phoneNumber.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    const confirmPassword = form.confirmPassword.value;
-
-    if (!passwordRegex.test(password)) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Password must contain at least one uppercase, one lowercase, one special character, one digit and it should be at least 8 characters long.",
-      });
-      setIsLoading(false);
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Password doesn't matched!",
-      });
-      setIsLoading(false);
-      return;
-    }
-
-    try {
-      const data = {
-        referralId,
-        firstName,
-        lastName,
-        companyName,
-        phoneNumber,
-        email,
-        password,
-      };
-      const res = await register(data);
-
-      if (res?.error?.error) {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: `${res?.error?.error}`,
-        });
-      }
-      if (res?.error?.data?.message) {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: `${res?.error?.data?.message}`,
-        });
-      }
-      if (res?.data?.success) {
-        push(`/validate-email/${email}`);
-      }
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: `${error?.message}`,
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
   return (
     <AuthLayout>
       <div className="signIn">
@@ -104,7 +16,7 @@ const SignUp = () => {
             Sign In
           </Link>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form>
           <h2 className="text-[32px]">Sign Up</h2>
           <p className="fs-6 subtitle">To prepare to log into the system</p>
           <div className="mb-2">
@@ -117,7 +29,6 @@ const SignUp = () => {
               name="referralId"
               id="referralId"
               placeholder="Paste your referral ID or enter None if you were not refered"
-              required
             />
           </div>
 
@@ -128,10 +39,9 @@ const SignUp = () => {
             <input
               className="p-5 h-[unset]"
               type="text"
-              name="firstName"
+              name="fname"
               id="fname"
               placeholder="Enter your  first name"
-              required
             />
           </div>
           <div className="mb-2">
@@ -141,10 +51,9 @@ const SignUp = () => {
             <input
               className="p-5 h-[unset]"
               type="text"
-              name="lastName"
+              name="lname"
               id="lname"
               placeholder="Enter your last name"
-              required
             />
           </div>
 
@@ -155,10 +64,9 @@ const SignUp = () => {
             <input
               className="p-5 h-[unset]"
               type="text"
-              name="companyName"
+              name="cname"
               id="cname"
               placeholder="Enter your company name"
-              required
             />
           </div>
           <div className="mb-4">
@@ -171,7 +79,6 @@ const SignUp = () => {
               name="email"
               id="semail"
               placeholder="Enter your email address"
-              required
             />
           </div>
           <div className="mb-4">
@@ -181,24 +88,22 @@ const SignUp = () => {
             <input
               className="p-5 h-[unset]"
               type="tel"
-              name="phoneNumber"
+              name="cell"
               id="cell"
               placeholder="Enter your cell phone number"
-              required
             />
           </div>
           <div className="mb-4">
             <label className="fs-6" htmlFor="password">
               <span>*</span> Password
             </label>
-            <div className="relative">
+            <div className="position-relative">
               <input
                 className="mb-2 p-5 h-[unset]"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
                 placeholder="Enter your password"
-                required
               />
               <img
                 onClick={() => setShowPassword(!showPassword)}
@@ -208,24 +113,23 @@ const SignUp = () => {
                   right: "20px",
                   cursor: "pointer",
                 }}
-                className="absolute "
-                src={showPassword ? eye.src : eyeOff.src}
+                className="position-absolute "
+                src={showPassword ? eye : eyeOff}
                 alt=""
               />
             </div>
           </div>
           <div className="mb-2">
-            <label className="fs-6" htmlFor="confirmPassword">
+            <label className="fs-6" htmlFor="cpassword">
               <span>*</span> Confirm Password
             </label>
-            <div className="relative">
+            <div className="position-relative">
               <input
                 className="mb-2 p-5 h-[unset]"
                 type={showConPassword ? "text" : "password"}
-                name="confirmPassword"
-                id="confirmPassword"
+                name="password"
+                id="password"
                 placeholder="Enter your password"
-                required
               />
               <img
                 onClick={() => setShowConPassword(!showConPassword)}
@@ -235,25 +139,19 @@ const SignUp = () => {
                   right: "20px",
                   cursor: "pointer",
                 }}
-                className="absolute "
-                src={showConPassword ? eye.src : eyeOff.src}
+                className="position-absolute "
+                src={showConPassword ? eye : eyeOff}
                 alt=""
               />
             </div>
           </div>
-          {/* <p className="err_sms mb-5">
+          <p className="err_sms mb-5">
             Email already exists in the system you must enter the Referral ID or
             contact customer service at (800) 123-1234
-          </p> */}
-          {/* <Link href="/dashboard"> */}
-          <button
-            className="signIn_btn fs-5 mb-5"
-            type="submit"
-            disabled={registering || isLoading}
-          >
-            {registering || isLoading ? "Creating..." : "Create account"}
-          </button>
-          {/* </Link> */}
+          </p>
+          <Link href="/dashboard">
+            <button className="signIn_btn fs-5 mb-5">Create account </button>
+          </Link>
         </form>
         <div></div>
       </div>
@@ -261,4 +159,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpUserPage;
