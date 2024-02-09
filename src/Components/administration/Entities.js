@@ -1,5 +1,6 @@
 import React from "react";
 import deleteIcon from "@/assets/deleteIcon.svg";
+import { useGetAllCompanyQuery } from "@/features/Company/companyApi";
 
 const datas = [
   {
@@ -35,6 +36,8 @@ const datas = [
 ];
 
 const Entities = () => {
+  const { data } = useGetAllCompanyQuery();
+  console.log(data, "company");
   return (
     <div className="mt-[30px] overflow-x-scroll no_scrollbar">
       <table className="fs_14">
@@ -48,19 +51,21 @@ const Entities = () => {
           </tr>
         </thead>
         <tbody>
-          {datas.map((data, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td style={{ color: "#FF6B0D" }}>{data.companyName}</td>
-              <td>{data.address}</td>
-              <td className="whitespace-nowrap">{data.phone}</td>
-              <td className="text-center">
-                <button>
-                  <img src={deleteIcon?.src} alt="" />
-                </button>
-              </td>
-            </tr>
-          ))}
+          {data &&
+            data?.length > 0 &&
+            data.map((item, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td style={{ color: "#FF6B0D" }}>{item.companyName}</td>
+                <td>{item?.firstAddress ? item?.firstAddress : "N/A"}</td>
+                <td className="whitespace-nowrap">{item.phone}</td>
+                <td className="text-center">
+                  <button>
+                    <img src={deleteIcon?.src} alt="" />
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
       <p className="fs_14 table_result">Showing 5 to 5 of 5 entries</p>

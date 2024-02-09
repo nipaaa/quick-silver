@@ -1,6 +1,7 @@
 import { useAddInsuredMutation } from "@/features/Inspection/inspectionApi";
 import { setNewInsuredId } from "@/features/Inspection/inspectionSlice";
 import { useGetFieldAdjusterQuery } from "@/features/auth/authApi";
+import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
@@ -10,6 +11,8 @@ const NewInsured = ({ setActiveTab }) => {
   const { type } = useSelector((state) => state.inspection);
 
   const dispatch = useDispatch();
+
+  const { push } = useRouter();
 
   const { data } = useGetFieldAdjusterQuery(user?.companyId);
   const [addInsured, { isLoading }] = useAddInsuredMutation();
@@ -96,7 +99,7 @@ const NewInsured = ({ setActiveTab }) => {
               type="date"
               name="Date"
               id="date"
-              value={today.toISOString().split("T")[0]}
+              defaultValue={today.toISOString().split("T")[0]}
               placeholder="Enter your email address"
               required
             />
@@ -242,7 +245,11 @@ const NewInsured = ({ setActiveTab }) => {
         </div>
 
         <div className="flex gap-4 items-center btn_set">
-          <button className="cancel_btn " type="button">
+          <button
+            className="cancel_btn "
+            type="button"
+            onClick={() => push("/dashboard/inspection/search")}
+          >
             Cancel
           </button>
           <button className="search_btn" type="submit">

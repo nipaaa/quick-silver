@@ -1,11 +1,68 @@
 import React from "react";
 import check from "../../assets/tickCheck.svg";
 import Image from "next/image";
+import { useAddPropertyMutation } from "@/features/Inspection/inspectionApi";
+import Swal from "sweetalert2";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 const NewProperty = () => {
+  const { newInsuredId } = useSelector((state) => state.inspection);
+
+  const [addProperty, { isLoading }] = useAddPropertyMutation();
+
+  const { push } = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const InsurerId = newInsuredId;
+    const PropertyDetails = form.PropertyDetails.value;
+    const YearBuilt = form.YearBuilt.value;
+    const Occupied = form.Occupied.value;
+    const HomeownerPresent = form.HomeownerPresent.value;
+
+    const formdData = {
+      InsurerId,
+      PropertyDetails,
+      YearBuilt,
+      Occupied,
+      HomeownerPresent,
+    };
+
+    try {
+      const res = await addProperty(formdData);
+      if (res?.error?.error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${res?.error?.error}`,
+        });
+      }
+      if (res?.error?.data?.message) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${res?.error?.data?.message}`,
+        });
+      }
+      if (res?.data?.success) {
+        push("/dashboard/inspection/search");
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${error?.message}`,
+      });
+    }
+  };
+
   return (
     <div className="max-w-[509px] w-full">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-[60px] mb-[30px]">
           <div>
             <label className="fs-6" htmlFor="details">
@@ -13,9 +70,10 @@ const NewProperty = () => {
             </label>
             <input
               type="text"
-              name="details"
+              name="PropertyDetails"
               id="details"
               placeholder="Dwelling  "
+              required
             />
           </div>
           <div>
@@ -24,9 +82,10 @@ const NewProperty = () => {
             </label>
             <input
               type="number"
-              name="year"
+              name="YearBuilt"
               id="year"
               placeholder="Dwelling  "
+              required
             />
           </div>
         </div>
@@ -46,28 +105,38 @@ const NewProperty = () => {
             <label className="fs-6" htmlFor="occupied">
               <span>*</span> Occupied:
             </label>
-            <select>
-              <option>Yes</option>
-              <option>No </option>
+            <select name="Occupied">
+              <option value={"Yes"}>Yes</option>
+              <option value={"No"}>No </option>
             </select>
           </div>
           <div>
             <label className="fs-6" htmlFor="owner">
               <span>*</span> Homeowner Present:
             </label>
-            <select>
-              <option>Yes</option>
-              <option>No </option>
+            <select name="HomeownerPresent">
+              <option value={"Yes"}>Yes</option>
+              <option value={"No"}>No </option>
             </select>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 justify-between">
           <div className="flex flex-wrap gap-4 items-center btn_set">
-            <button className="cancel_btn fs-6">Cancel</button>
-            <button className="search_btn fs-6">Save</button>
+            <button
+              className="cancel_btn fs-6"
+              button="button"
+              onClick={() => push("/dashboard/inspection/search")}
+            >
+              Cancel
+            </button>
+            <button className="search_btn fs-6" button="submit">
+              Save
+            </button>
           </div>
-          <button className="search_btn fs-6">Send Assignment</button>
+          <button className="search_btn fs-6" type="button">
+            Send Assignment
+          </button>
         </div>
       </form>
     </div>

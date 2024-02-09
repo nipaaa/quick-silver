@@ -40,8 +40,10 @@ const datas = [
   },
 ];
 
-const CompanyTable = () => {
+const CompanyTable = ({ user, data }) => {
   const [checkedItems, setCheckItems] = useState([]);
+
+  console.log(data, "ggg");
 
   const handleCheck = (item) => {
     if (checkedItems.includes(item)) {
@@ -65,32 +67,40 @@ const CompanyTable = () => {
           </tr>
         </thead>
         <tbody>
-          {datas.map((data, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td style={{ color: "#FF6B0D" }}>{data.name}</td>
-              <td>{data.email}</td>
-              <td className="whitespace-nowrap">{data.phone}</td>
-              <td>{data.role}</td>
-              <td className="text-center">
-                {/* <input
+          {data &&
+            data?.companyUsers?.length > 0 &&
+            data?.companyUsers?.map((item, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td style={{ color: "#FF6B0D" }}>
+                  {item.firstName} {item.lastName}
+                </td>
+                <td>{item.email}</td>
+                <td className="whitespace-nowrap">{item.phoneNumber}</td>
+                <td>{item.userRole}</td>
+                <td className="text-center">
+                  {/* <input
                   type="checkbox"
                   className="h-[19px] w-[19px] cursor-pointer"
                   style={{ accentColor: "#ff6b0d", color: "#fff" }}
                 /> */}
-                <div
-                  onClick={() => handleCheck(index)}
-                  className="flex justify-center"
-                >
-                  {checkedItems.includes(index) ? (
-                    <img src={check.src} alt="" className="cursor-pointer" />
-                  ) : (
-                    <img src={unCheck.src} alt="" className="cursor-pointer" />
-                  )}
-                </div>
-              </td>
-            </tr>
-          ))}
+                  <div
+                    onClick={() => handleCheck(index)}
+                    className="flex justify-center"
+                  >
+                    {checkedItems.includes(index) ? (
+                      <img src={check.src} alt="" className="cursor-pointer" />
+                    ) : (
+                      <img
+                        src={unCheck.src}
+                        alt=""
+                        className="cursor-pointer"
+                      />
+                    )}
+                  </div>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
       <p className="fs_14 table_result">Showing 5 to 5 of 5 entries</p>

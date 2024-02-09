@@ -3,11 +3,16 @@ import Buttons from "@/Components/administration/company/Buttons";
 import CompanyInfo from "@/Components/administration/company/CompanyInfo";
 import CompanyTable from "@/Components/administration/company/CompanyTable";
 import CustomModal from "@/Components/Shared/Modal/CustomModal";
+import { useGetMyCompanyInfoQuery } from "@/features/Company/companyApi";
 import DashboardLayout from "@/Layout/DashboardLayout";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 const CompanyPage = () => {
   const [activePage, setActivePage] = useState("main");
+  const { user } = useSelector((state) => state.auth);
+
+  const { data } = useGetMyCompanyInfoQuery(user?.companyId);
 
   // refer new company modal
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,7 +28,7 @@ const CompanyPage = () => {
     closeModal();
   };
 
-  // invite new user modal 
+  // invite new user modal
   const [InviteModalOpen, setInviteModalOpen] = useState(false);
 
   const openInviteModal = () => setInviteModalOpen(true);
@@ -41,8 +46,8 @@ const CompanyPage = () => {
     <DashboardLayout>
       {activePage === "main" && (
         <div>
-          <CompanyInfo />
-          <CompanyTable />
+          <CompanyInfo user={user} data={data} />
+          <CompanyTable user={user} data={data} />
           <Buttons
             setActivePage={setActivePage}
             handleReferNewCompanyModal={handleReferNewCompanyModal}
@@ -99,10 +104,8 @@ const CompanyPage = () => {
             </div>
           </div>
           <div className="grid grid-cols-2">
-          <div className="mt-[20px]">
-              <label className="inputLabel">
-                Cell Phone:
-              </label>
+            <div className="mt-[20px]">
+              <label className="inputLabel">Cell Phone:</label>
               <input
                 type="email"
                 name=""
@@ -159,10 +162,8 @@ const CompanyPage = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-[20px]">
-          <div className="mt-[20px]">
-              <label className="inputLabel">
-                Cell Phone:
-              </label>
+            <div className="mt-[20px]">
+              <label className="inputLabel">Cell Phone:</label>
               <input
                 type="email"
                 name=""
@@ -172,17 +173,17 @@ const CompanyPage = () => {
               />
             </div>
             <div className="mt-[20px]">
-              <label className="inputLabel">
-                Role:
-              </label>
-             <select className="h-[43px]">
-              <option selected disabled>Select a user role</option>
-              <option>fkjkfd</option>
-              <option>fkjkfd</option>
-              <option>fkjkfd</option>
-              <option>fkjkfd</option>
-              <option>fkjkfd</option>
-             </select>
+              <label className="inputLabel">Role:</label>
+              <select className="h-[43px]">
+                <option selected disabled>
+                  Select a user role
+                </option>
+                <option>fkjkfd</option>
+                <option>fkjkfd</option>
+                <option>fkjkfd</option>
+                <option>fkjkfd</option>
+                <option>fkjkfd</option>
+              </select>
             </div>
           </div>
         </div>
